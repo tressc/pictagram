@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup({user: user});
+    this.props.login({user: user});
   }
 
   update(field) {
@@ -28,9 +28,9 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    if (this.props.currentUser) {
-      this.props.history.push('/home');
-    }
+    // if (this.props.currentUser) {
+    //   this.props.history.push('/home');
+    // }
     return (
       <div className="session">
         <ul>
@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
             <button>Log in</button>
           </form>
           <div className="session_box toggle">
-            <span>Don't have an account?<Link to='/signup'>Sign up</Link></span>
+            <span>Don't have an account?<Link to='/'>Sign up</Link></span>
           </div>
         </div>
       </div>

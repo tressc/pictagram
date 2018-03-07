@@ -30,9 +30,9 @@ class SignUpForm extends React.Component {
   }
 
   render() {
-    if (this.props.currentUser) {
-      this.props.history.push('/home');
-    }
+    // if (this.props.currentUser) {
+    //   this.props.history.push('/home');
+    // }
     return (
       <div className="session">
         <ul>
