@@ -15,6 +15,10 @@ class SignUpForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  componentDidMount() {
+    this.props.removeErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -30,15 +34,12 @@ class SignUpForm extends React.Component {
   }
 
   render() {
-    // if (this.props.currentUser) {
-    //   this.props.history.push('/home');
-    // }
     return (
       <div className="session">
         <ul>
           {this.props.errors}
         </ul>
-        <div>
+        <div className="session_block">
           <form onSubmit={this.handleSubmit} className="session_box form signup">
             <h1>Pictagram</h1>
             <label>
@@ -56,7 +57,7 @@ class SignUpForm extends React.Component {
             <button>Sign up</button>
           </form>
           <div className="session_box toggle">
-            <span>Have an account? <Link to='/login'>Log in</Link></span>
+            <span>Have an account?  <Link to='/login'>Log in</Link></span>
           </div>
         </div>
       </div>

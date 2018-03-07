@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SignUpForm from './signup_form';
-import { signup } from '../../actions/session_actions';
+import { signup, removeErrors } from '../../actions/session_actions';
 
 
 const msp = (state) => {
@@ -13,7 +13,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    signup: (user) => dispatch(signup(user))
+    signup: (user) => dispatch(signup(user)),
+    removeErrors: () => dispatch(removeErrors())
   };
 };
 

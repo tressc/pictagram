@@ -13,6 +13,10 @@ class LoginForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  componentDidMount() {
+    this.props.removeErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -28,15 +32,9 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    // if (this.props.currentUser) {
-    //   this.props.history.push('/home');
-    // }
     return (
       <div className="session">
-        <ul>
-          {this.props.errors}
-        </ul>
-        <div>
+        <div className="session_block">
           <form onSubmit={this.handleSubmit} className="session_box form login">
             <h1>Pictagram</h1>
             <label>
@@ -46,9 +44,12 @@ class LoginForm extends React.Component {
               <input placeholder="Password" type="password" value={this.state.password} onChange={this.update('password')}/>
             </label>
             <button>Log in</button>
+            <span className="errors">
+              {this.props.errors}
+            </span>
           </form>
           <div className="session_box toggle">
-            <span>Don't have an account?<Link to='/'>Sign up</Link></span>
+            <span>Don't have an account?  <Link to='/'>Sign up</Link></span>
           </div>
         </div>
       </div>

@@ -7,12 +7,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
 
-  //TODO figure out how to conditionally render login/signup
-  // const user = (store.getState().session.currentUser);
-  // if (user) {
-  //   console.log(user);
-  // }
-
   return (
     <div>
       <Switch>
