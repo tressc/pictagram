@@ -38,7 +38,7 @@ class SignUpForm extends React.Component {
         <ul>
           {this.props.errors}
         </ul>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Email
             <input type="text" value={this.state.email} onChange={this.update('email')}></input>
           </label>
@@ -51,6 +51,7 @@ class SignUpForm extends React.Component {
           <label>Password
             <input type="password" value={this.state.password} onChange={this.update('password')}></input>
           </label>
+          <button>Sign up</button>
         </form>
         <span>
           Have an account? <Link to='/login'>Log in</Link>
@@ -61,4 +62,4 @@ class SignUpForm extends React.Component {
 
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);
