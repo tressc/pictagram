@@ -29,8 +29,48 @@ button {
     border-radius: 3px;
 }
 
+button:active {
+  background-color: #73b6f4;
+  border: 1px solid #73b6f4;
+}
+
+.or {
+  text-align: center;
+  color: #c7c7c7;
+  margin: 20px;
+  font-size: 15px;
+}
+
+.or::before,
+.or::after {
+  background-color: #c7c7c7;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 115px
+}
+
+.or:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+.or:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+
 .errors {
+  margin: 10px;
+  text-align: center;
   color: red;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.errors li {
+  margin: 5px;
 }
 
 .session_block {
@@ -59,15 +99,6 @@ button {
   margin: 23px;
 }
 
-.form.signup{
-  height: 300px;
-}
-
-.form.login{
-  height: 200px;
-  padding-bottom: 40px;
-}
-
 .toggle {
   display: flex;
   height: 50px;
@@ -79,7 +110,7 @@ a {
 }
 
 a:active {
-  color: #aad6ff
+  color: #73b6f4
 }
 
 

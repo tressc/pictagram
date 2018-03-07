@@ -32,6 +32,11 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    const errors = this.props.errors.map(e => {
+      return (
+        <li>{e}</li>
+      );
+    });
     return (
       <div className="session">
         <div className="session_block">
@@ -44,9 +49,9 @@ class LoginForm extends React.Component {
               <input placeholder="Password" type="password" value={this.state.password} onChange={this.update('password')}/>
             </label>
             <button>Log in</button>
-            <span className="errors">
-              {this.props.errors}
-            </span>
+            <ul className="errors">
+              {errors}
+            </ul>
           </form>
           <div className="session_box toggle">
             <span>Don't have an account?  <Link to='/'>Sign up</Link></span>

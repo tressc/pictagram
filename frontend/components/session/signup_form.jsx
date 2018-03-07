@@ -34,14 +34,18 @@ class SignUpForm extends React.Component {
   }
 
   render() {
+    const errors = this.props.errors.map(e => {
+      return (
+        <li>{e}</li>
+      );
+    });
     return (
       <div className="session">
-        <ul>
-          {this.props.errors}
-        </ul>
         <div className="session_block">
           <form onSubmit={this.handleSubmit} className="session_box form signup">
             <h1>Pictagram</h1>
+            <button>Log in as Demo User</button>
+            <div className="or">OR</div>
             <label>
               <input placeholder="Email" type="text" value={this.state.email} onChange={this.update('email')}></input>
             </label>
@@ -55,6 +59,9 @@ class SignUpForm extends React.Component {
               <input placeholder="Password" type="password" value={this.state.password} onChange={this.update('password')}></input>
             </label>
             <button>Sign up</button>
+            <ul className="errors">
+              {errors}
+            </ul>
           </form>
           <div className="session_box toggle">
             <span>Have an account?  <Link to='/login'>Log in</Link></span>
