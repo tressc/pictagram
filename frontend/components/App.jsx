@@ -12,7 +12,6 @@ const App = () => {
   }
   return (
     <div>
-      <h1>aw yis</h1>
       <Route path="/signup" component={ SignupFormContainer } />
       <Route path="/login" component={ LoginFormContainer } />
     </div>

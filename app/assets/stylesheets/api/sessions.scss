@@ -1,3 +1,79 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.session {
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fafafa;
+  justify-content: center;
+}
+
+button {
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    width: 268px;
+    padding: 0px 8px;
+    font-size: 14px;
+    line-height: 26px;
+    color: #FFFFFF;
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    border-radius: 3px;
+}
+
+.session_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0 10px;
+  width: 348px;
+}
+
+.form h1 {
+  font-family: 'Pacifico', cursive;
+  cursor: default;
+}
+
+.form.signup{
+  height: 300px;
+}
+
+.form.login{
+  height: 250px;
+}
+
+.toggle {
+  display: flex;
+  height: 50px;
+}
+
+a {
+  color: #3897f0;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+a:active {
+  color: #aad6ff
+}
+
+
+input {
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 268px;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  background-color: #fafafa;
+  padding: 9px 0 7px 8px;
+}

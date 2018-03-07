@@ -34,28 +34,31 @@ class SignUpForm extends React.Component {
       this.props.history.push('/home');
     }
     return (
-      <div>
+      <div className="session">
         <ul>
           {this.props.errors}
         </ul>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email
-            <input type="text" value={this.state.email} onChange={this.update('email')}></input>
-          </label>
-          <label>Full Name
-            <input type="text" value={this.state.full_name} onChange={this.update('full_name')}></input>
-          </label>
-          <label>Username
-            <input type="text" value={this.state.username} onChange={this.update('username')}></input>
-          </label>
-          <label>Password
-            <input type="password" value={this.state.password} onChange={this.update('password')}></input>
-          </label>
-          <button>Sign up</button>
-        </form>
-        <span>
-          Have an account? <Link to='/login'>Log in</Link>
-        </span>
+        <div>
+          <form onSubmit={this.handleSubmit} className="session_box form signup">
+            <h1>Pictagram</h1>
+            <label>
+              <input placeholder="Email" type="text" value={this.state.email} onChange={this.update('email')}></input>
+            </label>
+            <label>
+              <input placeholder="Full Name" type="text" value={this.state.full_name} onChange={this.update('full_name')}></input>
+            </label>
+            <label>
+              <input placeholder="Username" type="text" value={this.state.username} onChange={this.update('username')}></input>
+            </label>
+            <label>
+              <input placeholder="Password" type="password" value={this.state.password} onChange={this.update('password')}></input>
+            </label>
+            <button>Sign up</button>
+          </form>
+          <div className="session_box toggle">
+            <span>Have an account? <Link to='/login'>Log in</Link></span>
+          </div>
+        </div>
       </div>
     );
   }
