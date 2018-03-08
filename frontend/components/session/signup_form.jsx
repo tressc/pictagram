@@ -13,6 +13,7 @@ class SignUpForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +34,12 @@ class SignUpForm extends React.Component {
     };
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    const demo = {user: {username: 'demo', password: 'password'}};
+    this.props.login(demo);
+  }
+
   render() {
     const errors = this.props.errors.map(e => {
       return (
@@ -44,7 +51,7 @@ class SignUpForm extends React.Component {
         <div className="session_block">
           <form onSubmit={this.handleSubmit} className="session_box form signup">
             <h1>Pictagram</h1>
-            <button>Log in as Demo User</button>
+            <button onClick={this.demoLogin}>Log in as Demo User</button>
             <div className="or">OR</div>
             <label>
               <input placeholder="Email" type="text" value={this.state.email} onChange={this.update('email')}></input>
