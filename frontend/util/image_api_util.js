@@ -19,3 +19,11 @@ export const deleteImage = (id) => {
     url: `/api/images/${id}`
   });
 };
+
+export const fetchImages = (filter) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/images',
+    data: filter
+  });
+};
