@@ -12,6 +12,7 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
+    @image = Image.find(params[:id])
   end
 
   def destroy

@@ -45,6 +45,14 @@ export const createImage = (image) => (dispatch) => {
   });
 };
 
+export const fetchImage = (id) => (dispatch) => {
+  return APIUtil.showImage(id).then(image => {
+    dispatch(receiveImage(image));
+  }, errors => {
+    dispatch(receiveErrors(errors.responseJSON));
+  });
+};
+
 export const fetchImages = (filter) => (dispatch) => {
   return APIUtil.fetchImages(filter).then(images => {
     dispatch(receiveImages(images));
