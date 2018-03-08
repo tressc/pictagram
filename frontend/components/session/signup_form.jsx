@@ -48,6 +48,14 @@ class SignUpForm extends React.Component {
     });
     return (
       <div className="session">
+        <div classname="phones">
+          <div className="background">
+            <img src={window.phones}/>
+          </div>
+          <div className="slideshow">
+            placeholder text
+          </div>
+        </div>
         <div className="session_block">
           <form onSubmit={this.handleSubmit} className="session_box form signup">
             <h1>Pictagram</h1>

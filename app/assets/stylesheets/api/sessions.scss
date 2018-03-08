@@ -6,13 +6,33 @@
   transition: 0.3s;
   display: flex;
   position: relative;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100vh;
   margin: 0 auto;
   background-color: #fafafa;
   vertical-align: baseline;
+}
+
+.phones {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.background {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.slideshow {
+  position: absolute;
+  border: 1px solid red;
 }
 
 button {
@@ -72,11 +92,6 @@ button:active {
 
 .errors li {
   margin: 5px;
-}
-
-.session_block {
-  position: absolute;
-  top: 25%;
 }
 
 .session_box {
