@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308191632) do
+ActiveRecord::Schema.define(version: 20180308214954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180308191632) do
     t.string "session_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "full_name", null: false
+    t.string "full_name"
     t.string "pro_pic_file_name"
     t.string "pro_pic_content_type"
     t.integer "pro_pic_file_size"

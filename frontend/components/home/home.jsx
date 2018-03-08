@@ -7,7 +7,7 @@ class Home extends React.Component {
     return (
       <div>
         <button onClick={this.props.logout}>log out</button>
-        <ImageContainer imgId="2"/>
+        <input type="file" />
       </div>
     );
   }
