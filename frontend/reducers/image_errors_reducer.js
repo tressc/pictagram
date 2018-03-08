@@ -1,7 +1,8 @@
 import {
   RECEIVE_IMAGE_ERRORS,
   RECEIVE_IMAGE,
-  RECEIVE_IMAGES
+  RECEIVE_IMAGES,
+  REMOVE_IMAGE
 } from '../actions/image_actions';
 
 const imageErrorsReducer = (state = [], action) => {
@@ -12,6 +13,8 @@ const imageErrorsReducer = (state = [], action) => {
     case RECEIVE_IMAGES:
       return [];
     case REMOVE_IMAGE:
+      return [];
+    case RECEIVE_IMAGE:
       return [];
     default:
       return state;

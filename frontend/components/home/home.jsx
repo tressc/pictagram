@@ -1,6 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { withRouter } from 'react-router';
 
 class Home extends React.Component {
 
@@ -12,4 +10,4 @@ class Home extends React.Component {
 
 }
 
-export default withRouter(Home);
+export default Home;
