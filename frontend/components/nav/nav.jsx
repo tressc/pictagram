@@ -1,8 +1,7 @@
 import React from 'react';
 import ImageContainer from '../image/image_container';
-import Modal from 'react-modal';
 
-class Home extends React.Component {
+class Nav extends React.Component {
   constructor() {
     super();
 
@@ -26,19 +25,12 @@ class Home extends React.Component {
     return (
       <div>
         <button onClick={this.props.logout}>log out</button>
-        <button onClick={this.openModal}>Open Modal</button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          className="Modal"
-          overlayClassName="Overlay"
-        >
-          <button onClick={this.closeModal}>close</button>
-        </Modal>
+        <button>Upload New Image</button>
+        <input type="file" />
       </div>
     );
   }
 
 }
 
-export default Home;
+export default Nav;
