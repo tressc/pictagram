@@ -1,6 +1,7 @@
 class Api::ImagesController < ApplicationController
 
   def create
+    debugger
     @image = Image.new(image_params)
     @image.author_id = current_user.id
 
@@ -21,6 +22,6 @@ class Api::ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:image_url)
+    params.require(:image).permit(:image)
   end
 end

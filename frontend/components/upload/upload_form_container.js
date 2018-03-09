@@ -1,8 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import UploadForm from './upload_form';
 import { closeModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
-
+import { createImage } from '../../actions/image_actions';
 // const msp = (state) => {
 //   return {
 //
@@ -11,7 +11,8 @@ import { connect } from 'react-redux';
 
 const mdp = (dispatch) => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    createImage: (image) => dispatch(createImage(image))
   };
 };
 

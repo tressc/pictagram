@@ -2,7 +2,10 @@ export const createImage = (image) => {
   return $.ajax({
     method: 'POST',
     url: '/api/images',
-    data: { image }
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: image
   });
 };
 
