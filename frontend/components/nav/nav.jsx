@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageContainer from '../image/image_container';
+import { Link } from 'react-router-dom';
 
 class Nav extends React.Component {
   constructor() {
@@ -24,9 +25,10 @@ class Nav extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.logout}>log out</button>
+        <Link to='/'>Home</Link>
         <button>Upload New Image</button>
-        <input type="file" />
+        <Link to={`/${this.props.currentUser.id}`}>Profile</Link>
+        <button onClick={this.props.logout}>log out</button>
       </div>
     );
   }

@@ -27,6 +27,7 @@ button {
   background-color: #3897f0;
   border: 1px solid #3897f0;
   border-radius: 3px;
+  margin-top: 5px;
 }
 
 button:active {
@@ -36,14 +37,14 @@ button:active {
 
 .or {
   text-align: center;
-  color: #c7c7c7;
+  color: #999;
   margin: 20px;
   font-size: 15px;
 }
 
 .or::before,
 .or::after {
-  background-color: #c7c7c7;
+  background-color: #999;
   content: "";
   display: inline-block;
   height: 1px;
@@ -71,12 +72,12 @@ button:active {
 }
 
 .errors li {
-  margin: 5px;
+  margin: 10px 0 0;
 }
 
 .session_block {
   position: absolute;
-  top: 25%;
+  top: 12.5%;
 }
 
 .session_box {
@@ -98,11 +99,20 @@ button:active {
   font-size: 250%;
   cursor: default;
   margin: 23px;
+  user-select: none;
 }
 
 .toggle {
   display: flex;
   height: 50px;
+}
+
+.enticement, .terms {
+  color: #999;
+  text-align: center;
+  width: 60%;
+  margin: 5px 0 15px;
+  font-size: 90%;
 }
 
 a {

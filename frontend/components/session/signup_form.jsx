@@ -51,6 +51,9 @@ class SignUpForm extends React.Component {
         <div className="session_block">
           <form onSubmit={this.handleSubmit} className="session_box form signup">
             <h1>Pictagram</h1>
+            <div className="enticement">
+              <span>Sign up to see photos and videos from your friends.</span>
+            </div>
             <button onClick={this.demoLogin}>Log in as Demo User</button>
             <div className="or">OR</div>
             <label>
@@ -69,6 +72,9 @@ class SignUpForm extends React.Component {
             <ul className="errors">
               {errors}
             </ul>
+            <div className="terms">
+              <span>By signing up, you agree to our Terms & Privacy Policy.</span>
+            </div>
           </form>
           <div className="session_box toggle">
             <span>Have an account?  <Link to='/login'>Log in</Link></span>
