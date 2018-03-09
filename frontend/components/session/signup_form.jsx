@@ -48,7 +48,7 @@ class SignUpForm extends React.Component {
     });
     return (
       <div className="session">
-        <div classname="phones">
+        <div className="phones">
           <div className="background">
             <img src={window.phones}/>
           </div>

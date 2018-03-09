@@ -1,6 +1,6 @@
 export const OPEN = 'OPEN';
 export const CLOSE = 'CLOSE';
-export const RECEIVE_COMPONENT = 'RECEIVE_COMPONENT';
+// export const RECEIVE_COMPONENT = 'RECEIVE_COMPONENT';
 
 export const closeModal = () => {
   return {
@@ -9,16 +9,16 @@ export const closeModal = () => {
   };
 };
 
-export const openModal = (component) => {
+export const openModal = (modal) => {
   return {
     type: OPEN,
-    component
+    modal
   };
 };
 
-export const receiveComponent = (component) => {
-  return {
-    type: RECEIVE_COMPONENT,
-    component
-  };
-};
+// export const receiveComponent = (component) => {
+//   return {
+//     type: RECEIVE_COMPONENT,
+//     component
+//   };
+// };
