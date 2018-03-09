@@ -1,28 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-
-// class Modal extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//
-//   render() {
-//     if (this.props.isOpen) {
-//       return (
-//         <div className="modal-background" onClick={this.props.closeModal}>
-//           <div className="modal-child" onClick={e => e.stopPropagation()}>
-//             { this.props.component }
-//           </div>
-//         </div>
-//       );
-//     } else {
-//       return (
-//         <div className="modal-inactive"></div>
-//       );
-//     }
-//   }
-// }
+import UploadFormContainer from '../upload/upload_form_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {

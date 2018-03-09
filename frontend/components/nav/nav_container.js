@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Nav from './nav';
 import { logout } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
   return {
@@ -12,7 +13,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    logout: user => dispatch(logout(user))
+    logout: user => dispatch(logout(user)),
+    openModal: modal => dispatch(openModal(modal))
   };
 };
 

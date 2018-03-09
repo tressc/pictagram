@@ -3,23 +3,8 @@ import ImageContainer from '../image/image_container';
 import { Link } from 'react-router-dom';
 
 class Nav extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      modalIsOpen: false
-    };
-
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-
-  openModal() {
-    this.setState({modalIsOpen: true});
-  }
-
-  closeModal() {
-    this.setState({modalIsOpen: false});
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -40,7 +25,7 @@ class Nav extends React.Component {
         </div>
 
         <div className="nav_center">
-          <button>Upload New Image</button>
+          <button onClick={() => this.props.openModal('upload')}>Upload New Image</button>
         </div>
 
         <div className="nav_right">
