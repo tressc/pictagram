@@ -11,5 +11,4 @@ User.create!(
   password: 'password',
   email: 'demo@demo.com',
   full_name: 'demolicious',
-  img_url: ''
 )
