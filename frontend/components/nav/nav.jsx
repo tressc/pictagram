@@ -24,11 +24,30 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to='/'>Home</Link>
-        <button>Upload New Image</button>
-        <Link to={`/${this.props.currentUser.id}`}>Profile</Link>
-        <button onClick={this.props.logout}>log out</button>
+      <div className="nav">
+
+        <div className="nav_left">
+          <Link to='/'>
+            <div className="home_link">
+              <div className="logo">
+                <img src={window.logo} />
+              </div>
+              <div>
+                <span>Pictagram</span>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div className="nav_center">
+          <button>Upload New Image</button>
+        </div>
+
+        <div className="nav_right">
+          <Link to={`/${this.props.currentUser.id}`}>Profile</Link>
+          <button onClick={this.props.logout}>log out</button>
+        </div>
+
       </div>
     );
   }

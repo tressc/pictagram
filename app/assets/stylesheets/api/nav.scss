@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.nav button {
+  width: 100px;
+}
+
+.home_link {
+  display: flex;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+  width: 130%;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-right: 1px solid #939393;
+  padding-right: 15px;
+}
+
+.nav_left img {
+  width: 100%;
+}
+
+.nav_left span {
+  font-family: pacifico;
+  color: black;
+  font-size: 180%;
+  padding-left: 15px;
+}
