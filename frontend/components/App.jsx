@@ -7,7 +7,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UploadModal from './upload_modal/upload_modal';
 
 const App = () => {
-
   return (
     <div>
       <Switch>
