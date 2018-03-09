@@ -65,11 +65,9 @@ ol, ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
   }
 
 
   * {
     font-family: 'Open-Sans', sans-serif;
-    /* background-color: #fafafa; */
   }
