@@ -43,9 +43,6 @@ class LoginForm extends React.Component {
           <div className="background">
             <img src={window.phones}/>
           </div>
-          <div className="slideshow">
-            placeholder text
-          </div>
         </div>
         <div className="session_block">
           <form onSubmit={this.handleSubmit} className="session_box form login">
