@@ -30,7 +30,7 @@
   z-index: 10;
 }
 
-button {
+.session button {
   box-sizing: border-box;
   outline: none;
   cursor: pointer;
@@ -45,7 +45,7 @@ button {
   margin-top: 5px;
 }
 
-button:active {
+.session button:active {
   background-color: #73b6f4;
   border: 1px solid #73b6f4;
 }

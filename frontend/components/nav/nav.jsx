@@ -25,7 +25,9 @@ class Nav extends React.Component {
         </div>
 
         <div className="nav_center">
-          <button onClick={() => this.props.openModal('upload')}>Upload New Image</button>
+          <button className="upload_button" onClick={() => this.props.openModal('upload')}>
+              Upload Image
+          </button>
         </div>
 
         <div className="nav_right">

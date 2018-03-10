@@ -6,8 +6,27 @@
   border-bottom: 1px solid black;
 }
 
-.nav button {
-  width: 100px;
+.nav button:focus {
+  outline: none;
+}
+
+.upload_button {
+  cursor: pointer;
+  user-select: none;
+  width: 130px;
+  height: 30px;
+  background-color: white;
+  border-radius: 3px;
+  text-align: center;
+  outline: none;
+  border: 1px solid #dbdbdb;
+  color: #262626;
+  font-weight: 400;
+}
+
+.upload_button:active {
+  color: #6f6f6f;
+  outline: none;
 }
 
 .home_link {
