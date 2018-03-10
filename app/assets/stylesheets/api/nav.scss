@@ -3,14 +3,14 @@
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dbdbdb;
 }
 
-.nav button:focus {
+.nav button:focus{
   outline: none;
 }
 
-.upload_button {
+.nav button {
   cursor: pointer;
   user-select: none;
   width: 130px;
@@ -20,11 +20,11 @@
   text-align: center;
   outline: none;
   border: 1px solid #dbdbdb;
-  color: #262626;
+  color: #3d3d3d;
   font-weight: 400;
 }
 
-.upload_button:active {
+.nav button:active {
   color: #6f6f6f;
   outline: none;
 }
@@ -53,4 +53,22 @@
   color: black;
   font-size: 180%;
   padding-left: 15px;
+}
+
+.nav_right {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_right button {
+  width: 90px;
+}
+
+.nav_right a {
+  color: #3d3d3d;
+}
+
+.nav_right a:active {
+  color: #6f6f6f;
 }

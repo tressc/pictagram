@@ -31,8 +31,10 @@ class Nav extends React.Component {
         </div>
 
         <div className="nav_right">
-          <Link to={`/${this.props.currentUser.id}`}>Profile</Link>
-          <button onClick={this.props.logout}>log out</button>
+          <button>
+            <Link to={`/${this.props.currentUser.id}`}>Profile</Link>
+          </button>
+          <button onClick={this.props.logout}>Log Out</button>
         </div>
 
       </div>
