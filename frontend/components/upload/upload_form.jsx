@@ -37,10 +37,16 @@ class UploadForm extends React.Component {
     return (
       <div className="upload_form">
         <div className="choose_file">
-          <input type="file" onChange={this.updateFile}/>
+          <label for="file_upload" class="custom_file_upload">
+            <i class="fas fa-upload"></i>
+            <span>Choose File</span>
+          </label>
+          <input id="file_upload" type="file" onChange={this.updateFile}/>
         </div>
         <div className="preview">
-          <img src={this.state.imageUrl}/>
+          <div className="preview_image">
+            <img src={this.state.imageUrl}/>
+          </div>
         </div>
         <div className="buttons">
           <button onClick={this.props.closeModal}>Cancel</button>

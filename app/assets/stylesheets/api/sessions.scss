@@ -79,6 +79,8 @@
 }
 
 .errors {
+  display: flex;
+  flex-direction: column;
   margin: 10px;
   text-align: center;
   color: red;
