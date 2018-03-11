@@ -9,10 +9,12 @@ class Profile extends React.Component {
   render() {
     let images;
     if (this.props.user) {
-      const userImages = Object.values(this.props.user.images);
-      images = userImages.map(image => {
-        return <img src={image.img_url} />;
-      });
+      if (this.props.user.images) {
+        const userImages = Object.values(this.props.user.images);
+        images = userImages.map(image => {
+          return <img src={image.img_url} />;
+        });
+      }
     }
     return (
       <div className="profile">
