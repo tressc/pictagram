@@ -9,7 +9,7 @@
   align-items: center;
   height: 115vh;
   background-color: #fafafa;
-  background-color: orange;
+  // background-color: orange;
 }
 
 ul {
@@ -42,11 +42,12 @@ ul {
   align-items: center;
 }
 
-.profile_picture div{
-  width: 150px;
-  height: 150px;
-  background-color: skyblue;
+.profile_picture img {
   border-radius: 50%;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 .user_info {

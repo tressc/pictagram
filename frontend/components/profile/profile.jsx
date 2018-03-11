@@ -6,15 +6,23 @@ class Profile extends React.Component {
     this.props.fetchUser(this.props.match.params.id);
   }
 
+  componentDidUpdate() {
+    console.log(this.props);
+  }
+
   render() {
     let images;
     let userImages = [];
     let username;
+    let pro_pic = "";
     if (this.props.user) {
       username = this.props.user.user.username;
+      if (this.props.user.user.pro_pic) {
+        pro_pic = this.props.user.user.pro_pic;
+      }
       if (this.props.user.images) {
         userImages = Object.values(this.props.user.images);
-        images = userImages.map(image => {
+        images = userImages.reverse().map(image => {
           return (
             <div className="img_holder">
               <img src={image.img_url} />
@@ -27,7 +35,7 @@ class Profile extends React.Component {
       <div className="profile">
         <div className="user_info" >
           <div className="profile_picture">
-            <div></div>
+              <img src={pro_pic} />
           </div>
           <div className="profile_data">
             <span>{username}</span>

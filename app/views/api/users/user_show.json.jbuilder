@@ -1,7 +1,7 @@
 json.set! @user.id do
 
   json.user do
-    json.extract! @user, :id, :username
+    json.extract! @user, :id, :username, :pro_pic
   end
 
   json.images do

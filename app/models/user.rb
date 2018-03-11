@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_attached_file :pro_pic, default_url: "missing.png"
+  has_attached_file :pro_pic, default_url: "https://s3.us-east-2.amazonaws.com/picta-gram-dev/images/images/000/000/001/original/blues.png"
   validates_attachment_content_type :pro_pic, content_type: /\Aimage\/.*\Z/
 
   validates :username, :email, uniqueness: true
