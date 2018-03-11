@@ -38,8 +38,9 @@ class UploadForm extends React.Component {
       <div className="upload_form">
         <div className="choose_file">
           <label for="file_upload" class="custom_file_upload">
-            <i class="fas fa-upload"></i>
-            <span>Choose File</span>
+            <span>
+              Choose File
+            </span>
           </label>
           <input id="file_upload" type="file" onChange={this.updateFile}/>
         </div>

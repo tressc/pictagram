@@ -4,14 +4,60 @@
 
 .profile {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 115vh;
   background-color: #fafafa;
+  background-color: orange;
 }
 
 ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
+  grid-gap: 30px;
+}
+
+.profile img {
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.img_holder {
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_picture {
+  width: 300px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_picture div{
+  width: 150px;
+  height: 150px;
+  background-color: skyblue;
+  border-radius: 50%;
+}
+
+.user_info {
+  display: flex;
+  justify-content: flex-start;
+  width: 960px;
+  margin: 50px
+}
+
+.profile_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
