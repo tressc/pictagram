@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ImgModal from './img_modal';
 import { closeModal } from '../../actions/modal_actions';
-import { fetchImage } from '../../actions/image_actions';
+import { fetchImage, removeImage } from '../../actions/image_actions';
 
 const msp = (state, ownProps) => {
   return {
@@ -13,7 +13,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    fetchImage: (id) => dispatch(fetchImage(id))
+    fetchImage: (id) => dispatch(fetchImage(id)),
+    removeImage: () => dispatch(removeImage())
   };
 };
 

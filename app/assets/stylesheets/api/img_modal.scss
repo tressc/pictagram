@@ -23,12 +23,13 @@
 .side_bar {
   width: 340px;
   height: 600px;
+
 }
 
 .dropdown {
   display: none;
 }
 
-.side_bar:hover .dropdown{
+.elipsis:hover .dropdown{
   display: block;
 }

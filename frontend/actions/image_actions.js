@@ -19,10 +19,9 @@ const receiveImages = (images) => {
   };
 };
 
-const removeImage = (image) => {
+export const removeImage = () => {
   return {
     type: REMOVE_IMAGE,
-    image
   };
 };
 
