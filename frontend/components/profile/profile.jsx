@@ -13,9 +13,18 @@ class Profile extends React.Component {
   }
 
   handleClick(e) {
-    console.log(e.currentTarget.getAttribute('img'));
+    const id = parseInt(e.currentTarget.getAttribute('img'));
+    // console.log(e.currentTarget.getAttribute('img'));
     // this.props.openModal('img');
+    this.props.receiveImgId(id);
   }
+
+//create a selectedphoto slice of state
+//create a custom action to update the selected photo
+//handleclck executes custom action ->
+// componentDidMount (modal) dispatch fetchImage info(using selectedphoto as key)
+//modal listens for selectedphoto and updates accordingly
+
 
   render() {
     let images;
