@@ -15,8 +15,8 @@ class Profile extends React.Component {
   handleClick(e) {
     const id = parseInt(e.currentTarget.getAttribute('img'));
     // console.log(e.currentTarget.getAttribute('img'));
-    // this.props.openModal('img');
     this.props.receiveImgId(id);
+    this.props.openModal('img');
   }
 
 //create a selectedphoto slice of state
