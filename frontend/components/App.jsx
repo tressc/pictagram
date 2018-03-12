@@ -17,7 +17,7 @@ const App = () => {
         <AuthRoute exact path='/login' component={ LoginFormContainer } />
         <ProtectedRoute path='/' component={ NavContainer } className="nav_bar"/>
       </Switch>
-      <ProtectedRoute path={`/:id`} component={ ProfileContainer } />
+      <ProtectedRoute path={`/users/:id`} component={ ProfileContainer } />
     </div>
   );
 };

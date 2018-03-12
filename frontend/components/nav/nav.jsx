@@ -32,7 +32,7 @@ class Nav extends React.Component {
 
           <div className="nav_right">
             <button>
-              <Link to={`/${this.props.currentUser.id}`}>Profile</Link>
+              <Link to={`/users/${this.props.currentUser.id}`}>Profile</Link>
             </button>
             <button onClick={this.props.logout}>Log Out</button>
           </div>

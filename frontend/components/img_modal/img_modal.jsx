@@ -21,8 +21,12 @@ class ImgModal extends React.Component {
         <div className="elipsis">
           <i class="fas fa-ellipsis-h"></i>
           <ul className="dropdown">
-            <li>edit post</li>
-            <li>delete post</li>
+            <li>
+              <button>edit post</button>
+            </li>
+            <li>
+              // <button onClick={() => this.delete}>delete post</button>
+            </li>
           </ul>
         </div>;
       }

@@ -9,6 +9,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchUser(this.props.match.params.id);
   }
 
@@ -19,14 +20,14 @@ class Profile extends React.Component {
     this.props.openModal('img');
   }
 
-//create a selectedphoto slice of state
-//create a custom action to update the selected photo
-//handleclck executes custom action ->
-// componentDidMount (modal) dispatch fetchImage info(using selectedphoto as key)
-//modal listens for selectedphoto and updates accordingly
+  componentWillUpdate() {
+    //infinite loop (but does do the thing)
+    // this.props.fetchUser(this.props.match.params.id);
+  }
 
 
   render() {
+    debugger
     let images;
     let userImages = [];
     let username;

@@ -1,4 +1,5 @@
 import { RECEIVE_USER } from '../actions/user_actions';
+// import { DESTROY_IMAGE } from '../actions/image_actions';
 import { merge } from 'lodash';
 
 const userReducer = (state = { users: {} }, action) => {
@@ -6,6 +7,9 @@ const userReducer = (state = { users: {} }, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       return merge({}, state, action.user);
+    // case DESTROY_IMAGE:
+    //   let newState = merge({}, state);
+    //   delete newState[action.user.images][acti]
     default:
       return state;
   }

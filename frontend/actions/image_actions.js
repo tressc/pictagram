@@ -4,6 +4,7 @@ export const RECEIVE_IMAGE = "RECEIVE_IMAGE";
 export const RECEIVE_IMAGES = "RECEIVE_IMAGES";
 export const REMOVE_IMAGE = "REMOVE_IMAGE";
 export const RECEIVE_IMAGE_ERRORS = "RECEIVE_IMAGE_ERRORS";
+export const DESTROY_IMAGE = "DESTROY_IMAGE";
 
 const receiveImage = (image) => {
   return {
@@ -32,8 +33,15 @@ const receiveErrors = (errors) => {
   };
 };
 
+const destroyImage = (id) => {
+  return {
+    type: DESTROY_IMAGE,
+    id
+  };
+};
+
 export const deleteImage = (id) => (dispatch) => {
-  return APIUtil.deleteImage(id).then(image => dispatch(removeImage(id)));
+  return APIUtil.deleteImage(id).then(image => dispatch(destroyImage(id)));
 };
 
 export const createImage = (image) => (dispatch) => {
