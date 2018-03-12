@@ -2,4 +2,20 @@
   background-color: white;
   height: 600px;
   width: 940px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.picture {
+  display: flex;
+  height: 600px;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.picture img {
+  max-height: 600px;
+  max-width: 600px;
 }

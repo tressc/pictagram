@@ -14,8 +14,9 @@ class ImgModal extends React.Component {
     }
     return (
       <div className="img_modal">
-        <span>i'm the image modal!</span>
-        <img src={image_url} />
+        <div className="picture">
+          <img src={image_url} />
+        </div>
       </div>
     );
   }
