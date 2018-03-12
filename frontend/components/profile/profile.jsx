@@ -25,7 +25,7 @@ class Profile extends React.Component {
         images = userImages.reverse().map(image => {
           return (
             <div className="img_holder">
-              <img src={image.img_url} />
+              <img src={image.img_url}/>
             </div>
           );
         });
@@ -33,18 +33,20 @@ class Profile extends React.Component {
     }
     return (
       <div className="profile">
-        <div className="user_info" >
-          <div className="profile_picture">
+        <div className="page">
+          <div className="user_info" >
+            <div className="profile_picture">
               <img src={pro_pic} />
+            </div>
+            <div className="profile_data">
+              <span>{username}</span>
+              <span>{userImages.length}posts</span>
+            </div>
           </div>
-          <div className="profile_data">
-            <span>{username}</span>
-            <span>{userImages.length}posts</span>
-          </div>
+          <ul>
+            {images}
+          </ul>
         </div>
-        <ul>
-          {images}
-        </ul>
       </div>
     );
   }

@@ -5,11 +5,15 @@
 .profile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 115vh;
-  background-color: #fafafa;
+  height: 100vh;
+  background-color: #d1d1d1;
   // background-color: orange;
+}
+
+.page {
+  position: relative;
+  top: 50px;
 }
 
 ul {
@@ -21,8 +25,8 @@ ul {
 .profile img {
   max-width: 300px;
   max-height: 300px;
-  min-width: 300px;
-  min-height: 300px;
+  // min-width: 300px;
+  // min-height: 300px;
 }
 
 .img_holder {
@@ -54,7 +58,7 @@ ul {
   display: flex;
   justify-content: flex-start;
   width: 960px;
-  margin: 50px
+  margin: 50px 0 50px 0;
 }
 
 .profile_data {
