@@ -19,3 +19,16 @@
   max-height: 600px;
   max-width: 600px;
 }
+
+.side_bar {
+  width: 340px;
+  height: 600px;
+}
+
+.dropdown {
+  display: none;
+}
+
+.side_bar:hover .dropdown{
+  display: block;
+}
