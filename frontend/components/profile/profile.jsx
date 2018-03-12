@@ -2,12 +2,19 @@ import React from 'react';
 
 class Profile extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id);
   }
 
-  componentDidUpdate() {
-    console.log(this.props);
+  handleClick(e) {
+    console.log(e.currentTarget.getAttribute('img'));
+    // this.props.openModal('img');
   }
 
   render() {
@@ -21,12 +28,12 @@ class Profile extends React.Component {
         pro_pic = this.props.user.user.pro_pic;
       }
       if (this.props.user.images) {
-        userImages = Object.values(this.props.user.images);
-        images = userImages.reverse().map(image => {
+        userImages = Object.keys(this.props.user.images);
+        images = userImages.reverse().map(key => {
           return (
-            <div onClick={() => this.props.openModal('img')} className="img_holder">
+            <div onClick={this.handleClick} key={key} img={key} className="img_holder">
               <div className="img_bg">
-                <img src={image.img_url}/>
+                <img src={this.props.user.images[key].img_url}/>
               </div>
             </div>
           );
