@@ -6,8 +6,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background-color: #d1d1d1;
+  background-attachment: scroll;
+  background-color: #fafafa;
   // background-color: orange;
 }
 
@@ -29,10 +29,24 @@ ul {
   // min-height: 300px;
 }
 
+.img_bg:hover {
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.img_bg {
+  width: inherit;
+  height: inherit;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .img_holder {
   height: 300px;
   width: 300px;
-  background-color: white;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -25,7 +25,9 @@ class Profile extends React.Component {
         images = userImages.reverse().map(image => {
           return (
             <div className="img_holder">
-              <img src={image.img_url}/>
+              <div className="img_bg">
+                <img src={image.img_url}/>
+              </div>
             </div>
           );
         });

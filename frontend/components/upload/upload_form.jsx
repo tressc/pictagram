@@ -24,11 +24,13 @@ class UploadForm extends React.Component {
   }
 
   handleSubmit(e) {
+    const user = window.store.getState().session.currentUser.id;
     const newImage = new FormData();
     if (this.state.imageFile) {
       newImage.append("image[image]", this.state.imageFile);
       this.props.createImage(newImage);
       this.props.closeModal();
+      this.props.fetchUser(user);
     }
   }
 
