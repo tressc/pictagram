@@ -6,6 +6,7 @@ import { fetchUser } from '../../actions/user_actions';
 import { receiveImgId } from '../../actions/ui_actions';
 
 const msp = (state, ownProps) => {
+  
   const user = state.entities.users[ownProps.match.params.id];
   return {
     user

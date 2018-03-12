@@ -9,8 +9,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    debugger
-    this.props.fetchUser(this.props.match.params.id);
+    this.props.fetchUser(parseInt(this.props.match.params.id));
   }
 
   handleClick(e) {
@@ -27,7 +26,6 @@ class Profile extends React.Component {
 
 
   render() {
-    debugger
     let images;
     let userImages = [];
     let username;
