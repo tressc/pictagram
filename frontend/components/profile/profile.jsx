@@ -24,7 +24,7 @@ class Profile extends React.Component {
         userImages = Object.values(this.props.user.images);
         images = userImages.reverse().map(image => {
           return (
-            <div className="img_holder">
+            <div onClick={() => this.props.openModal('img')} className="img_holder">
               <div className="img_bg">
                 <img src={image.img_url}/>
               </div>
