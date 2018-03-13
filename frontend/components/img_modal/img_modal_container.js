@@ -6,7 +6,7 @@ import { fetchImage, deleteImage } from '../../actions/image_actions';
 import { fetchUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
-  debugger
+  
   const currentImage = state.entities.images[state.ui.img_id];
   return {
     currentUser: state.session.currentUser,
