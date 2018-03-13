@@ -2,9 +2,20 @@ import React from 'react';
 
 class ImgModal extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
   componentWillMount() {
     const id = window.store.getState().ui.img_id;
     this.props.fetchImage(id);
+  }
+
+  handleDelete() {
+    const id = window.store.getState().ui.img_id;
+    this.props.deleteImage(id);
+    this.props.closeModal();
   }
 
 
@@ -22,7 +33,7 @@ class ImgModal extends React.Component {
               <button>edit post</button>
             </li>
             <li>
-              // <button onClick={() => this.delete}>delete post</button>
+              <button onClick={() => this.handleDelete()}>delete post</button>
             </li>
           </ul>
         </div>;

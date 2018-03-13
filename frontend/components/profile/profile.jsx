@@ -2,9 +2,8 @@ import React from 'react';
 
 class Profile extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 

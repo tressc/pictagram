@@ -1,4 +1,4 @@
-import { RECEIVE_IMAGE, RECEIVE_IMAGES } from '../actions/image_actions';
+import { RECEIVE_IMAGE, RECEIVE_IMAGES, DESTROY_IMAGE } from '../actions/image_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { merge } from 'lodash';
@@ -14,6 +14,10 @@ const imageReducer = (state = { images: {} }, action) => {
       return merge({}, state, {images: action.images});
     case RECEIVE_USER:
       return merge({}, state, action.user.images);
+    case DESTROY_IMAGE:
+      let newState = merge({}, state);
+      delete newState[action.id];
+      return newState;
     default:
       return state;
   }

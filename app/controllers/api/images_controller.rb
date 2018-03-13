@@ -17,6 +17,7 @@ class Api::ImagesController < ApplicationController
   end
 
   def destroy
+    Image.find(params[:id]).destroy
   end
 
   private
