@@ -23,7 +23,7 @@ class ImgModal extends React.Component {
     let image_url = "";
     let dropdown = null;
     if (this.props.image) {
-      image_url = this.props.image.image_url;
+      image_url = this.props.image.img_url;
       if (this.props.image.author_id === window.store.getState().session.currentUser.id) {
         dropdown =
         <div className="elipsis">

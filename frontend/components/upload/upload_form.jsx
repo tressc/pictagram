@@ -30,7 +30,6 @@ class UploadForm extends React.Component {
       newImage.append("image[image]", this.state.imageFile);
       this.props.createImage(newImage);
       this.props.closeModal();
-      this.props.fetchUser(user);
     }
   }
 
