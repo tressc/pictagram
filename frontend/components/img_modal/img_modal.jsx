@@ -22,6 +22,9 @@ class ImgModal extends React.Component {
 
   render() {
     let image_url = "";
+    let comments = null;
+    let addComment = null;
+    let likes = null;
     let dropdown = null;
     let username = null;
     if (this.props.currentImage) {
@@ -31,10 +34,16 @@ class ImgModal extends React.Component {
         <div >
           <img className="modal-pro-pic" src={this.props.image_owner.pro_pic} />
         </div>
-        <div>
+        <div className="username">
           {this.props.image_owner.username}
         </div>
       </div>;
+      comments = <div className="comments"></div>;
+      likes = <div className="likes"></div>;
+      addComment =
+      <form className="add-comment">
+        <input type="text" placeholder="Add a comment..."></input>
+      </form>;
       if (this.props.image_owner.id === this.props.currentUser.id) {
         dropdown =
         <div className="elipsis">
@@ -53,12 +62,15 @@ class ImgModal extends React.Component {
           <img src={image_url} />
         </div>
         <div className="side_bar">
-          {username}
           <div className="side_bar_top">
+              {username}
             <div className="options">
               {dropdown}
             </div>
           </div>
+          {comments}
+          {likes}
+          {addComment}
         </div>
       </div>
     );

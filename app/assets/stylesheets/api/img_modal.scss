@@ -29,9 +29,18 @@
 
 .dropdown {
   display: none;
+  visibility: hidden;
+  transition: visibility 0.5s;
+}
+
+.elipsis {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .elipsis:hover .dropdown{
+  visibility: visible;
   display: block;
 }
 
@@ -43,5 +52,49 @@
 
 .modal-user-info {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side_bar_top {
+  margin: 20px 24px;
+  width: 287px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.username {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 120%;
+}
+
+.comments {
+  height: 360px;
+  width: 287px;
+  background-color: orange;
+  margin-left: 24px;
+}
+
+.likes {
+  width: 287px;
+  height: 61px;
+  margin: 5px 24px;
+  background-color: pink;
+}
+
+.add-comment {
+  width: 261px;
+  height: 23px;
+  margin: 16px 24px;
+  background-color: lightgreen;
+}
+
+.add-comment input {
+  border: none;
+  font-size: 13px;
+}
+
+.add-comment input:focus {
+  border: none;
 }

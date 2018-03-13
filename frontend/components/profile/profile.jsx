@@ -45,8 +45,24 @@ class Profile extends React.Component {
               <img src={pro_pic} />
             </div>
             <div className="profile_data">
-              <span>{username}</span>
-              <span>{userImages}posts</span>
+              <div className="profile_username">
+                <span>{username}</span>
+                <button>Follow</button>
+              </div>
+              <div className="profile_stats">
+                <div className="stats_posts">
+                  <span className="number">{userImages}</span>
+                  <span>posts</span>
+                </div>
+                <div className="stats_followers">
+                  <span className="number">782</span>
+                  <span>followers</span>
+                </div>
+                <div className="stats_following">
+                  <span className="number">507</span>
+                  <span>following</span>
+                </div>
+              </div>
             </div>
           </div>
           <ul>
