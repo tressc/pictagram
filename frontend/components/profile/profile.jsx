@@ -29,7 +29,7 @@ class Profile extends React.Component {
         userImages = this.props.images.length;
         images = this.props.images.slice(0).reverse().map(img => {
           return (
-            <div onClick={this.handleClick} key={img.id} img={img} className="img_holder">
+            <div onClick={this.handleClick} key={img.id} img={img.id} className="img_holder">
               <div className="img_bg">
                 <img src={img.img_url}/>
               </div>
