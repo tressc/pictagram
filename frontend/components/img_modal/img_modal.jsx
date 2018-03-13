@@ -2,14 +2,11 @@ import React from 'react';
 
 class ImgModal extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     const id = window.store.getState().ui.img_id;
     this.props.fetchImage(id);
   }
 
-  componentWillUnmount() {
-    this.props.removeImage();
-  }
 
   render() {
     let image_url = "";
@@ -19,7 +16,7 @@ class ImgModal extends React.Component {
       if (this.props.image.author_id === window.store.getState().session.currentUser.id) {
         dropdown =
         <div className="elipsis">
-          <i class="fas fa-ellipsis-h"></i>
+          <i className="fas fa-ellipsis-h"></i>
           <ul className="dropdown">
             <li>
               <button>edit post</button>
