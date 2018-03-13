@@ -24,9 +24,7 @@ class Profile extends React.Component {
     let pro_pic = "";
     if (this.props.user) {
       username = this.props.user.user.username;
-      if (this.props.user.user.pro_pic) {
-        pro_pic = this.props.user.user.pro_pic;
-      }
+      pro_pic = this.props.user.user.pro_pic;
       if (this.props.user.images) {
         userImages = this.props.user.images.length;
         images = this.props.user.images.slice(0).reverse().map(key => {

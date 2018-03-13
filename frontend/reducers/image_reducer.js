@@ -9,7 +9,7 @@ const imageReducer = (state = { images: {} }, action) => {
     case RECEIVE_IMAGES:
       return merge({}, state, action.images);
     case RECEIVE_IMAGE:
-      return merge({}, state, {[action.image.id]: {img_url: action.image.image_url}});
+      return merge({}, state, {[action.image.id]: {img_url: action.image.image_url, id: action.image.id, author_id: action.image.author_id}});
     case RECEIVE_CURRENT_USER:
       return merge({}, state, {images: action.images});
     case RECEIVE_USER:

@@ -13,6 +13,7 @@ const receiveImage = (image) => {
 };
 
 const receiveImages = (images) => {
+  currentImage
   return {
     type: RECEIVE_IMAGES,
     images

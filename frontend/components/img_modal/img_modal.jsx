@@ -8,9 +8,10 @@ class ImgModal extends React.Component {
   }
 
   componentWillMount() {
-    const id = window.store.getState().ui.img_id;
-    this.props.fetchImage(id);
+    this.props.fetchImage(this.props.currentImage.id);
   }
+
+
 
   handleDelete() {
     const id = window.store.getState().ui.img_id;
@@ -22,16 +23,23 @@ class ImgModal extends React.Component {
   render() {
     let image_url = "";
     let dropdown = null;
-    if (this.props.image) {
-      image_url = this.props.image.img_url;
-      if (this.props.image.author_id === window.store.getState().session.currentUser.id) {
+    let username = null;
+    if (this.props.currentImage) {
+      image_url = this.props.currentImage.img_url;
+      username =
+      <div>
+        <div className="modal_pro_pic">
+          <img src={this.props.image_owner.pro_pic} />
+        </div>
+        <div>
+          {this.props.image_owner.username}
+        </div>
+      </div>;
+      if (this.props.image_owner.id === this.props.currentUser.id) {
         dropdown =
         <div className="elipsis">
           <i className="fas fa-ellipsis-h"></i>
           <ul className="dropdown">
-            <li>
-              <button>edit post</button>
-            </li>
             <li>
               <button onClick={() => this.handleDelete()}>delete post</button>
             </li>
@@ -45,7 +53,11 @@ class ImgModal extends React.Component {
           <img src={image_url} />
         </div>
         <div className="side_bar">
-          {dropdown}
+          <div className="side_bar_top">
+            <div className="options">
+              {dropdown}
+            </div>
+          </div>
         </div>
       </div>
     );
