@@ -14,16 +14,9 @@ class Profile extends React.Component {
 
   handleClick(e) {
     const id = parseInt(e.currentTarget.getAttribute('img'));
-    // console.log(e.currentTarget.getAttribute('img'));
     this.props.receiveImgId(id);
     this.props.openModal('img');
   }
-
-  componentWillUpdate() {
-    //infinite loop (but does do the thing)
-    // this.props.fetchUser(this.props.match.params.id);
-  }
-
 
   render() {
     let images;

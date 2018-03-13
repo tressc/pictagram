@@ -6,7 +6,11 @@ const userReducer = (state = { users: {} }, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, state, {[action.user.user.id]: action.user});
+    const imgIds = Object.keys(action.user.images);
+      return merge({}, state, {[action.user.user.id]:
+        {user: action.user.user,
+        images: imgIds}
+      });
     default:
       return state;
   }
