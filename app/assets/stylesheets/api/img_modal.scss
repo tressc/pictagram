@@ -26,10 +26,6 @@
 
 }
 
-.side_bar_top {
-  display: flex;
-  width: 340px;
-}
 
 .dropdown {
   display: none;
@@ -39,8 +35,13 @@
   display: block;
 }
 
-.modal_pro_pic {
+.modal-pro-pic {
   max-width: 40px;
   max-height: 40px;
   border-radius: 50%;
+}
+
+.modal-user-info {
+  display: flex;
+  flex-direction: column;
 }

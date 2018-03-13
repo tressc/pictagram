@@ -11,18 +11,20 @@ const userReducer = (state = { users: {} }, action) => {
         newState[Object.keys(newState)[0]].images.splice(idx, 1);
       return newState;
     case RECEIVE_USER:
-    const imgIds = Object.keys(action.user.images);
+    const imgIds = action.user.images;
       return merge({}, state, {[action.user.user.id]:
         {user: action.user.user,
         images: imgIds}
       });
     case RECEIVE_IMAGE:
+      console.log(action);
+      console.log(state);
       let imgUser = state[action.image.author_id];
-      let newArr = imgUser.images.slice();
-      if (!newArr.includes(action.image.id.toString())) {
-        newArr.push(action.image.id.toString());
+      let newArr = imgUser.user.image_ids.slice();
+      if (!newArr.includes(action.image.id)) {
+        newArr.push(action.image.id);
       }
-      return merge({}, state, {[imgUser.user.id]: {images: newArr}});
+      return merge({}, state, {[imgUser.user]: {image_ids: newArr}});
     default:
       return state;
   }

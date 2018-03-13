@@ -8,6 +8,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.fetchUser(parseInt(this.props.match.params.id));
   }
 
@@ -25,18 +26,16 @@ class Profile extends React.Component {
     if (this.props.user) {
       username = this.props.user.user.username;
       pro_pic = this.props.user.user.pro_pic;
-      if (this.props.user.images) {
-        userImages = this.props.user.images.length;
-        images = this.props.user.images.slice(0).reverse().map(key => {
+        userImages = this.props.images.length;
+        images = this.props.images.slice(0).reverse().map(img => {
           return (
-            <div onClick={this.handleClick} key={key} img={key} className="img_holder">
+            <div onClick={this.handleClick} key={img.id} img={img} className="img_holder">
               <div className="img_bg">
-                <img src={this.props.images[key].img_url}/>
+                <img src={img.img_url}/>
               </div>
             </div>
           );
         });
-      }
     }
     return (
       <div className="profile">

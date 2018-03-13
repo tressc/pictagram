@@ -6,8 +6,8 @@ import { fetchUser } from '../../actions/user_actions';
 import { receiveImgId } from '../../actions/ui_actions';
 
 const msp = (state, ownProps) => {
-  const images = state.entities.images;
   const user = state.entities.users[ownProps.match.params.id];
+  const images = user ? user.user.image_ids.map(imageId => state.entities.images[imageId]) : [];
   return {
     user, images
   };

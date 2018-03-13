@@ -27,9 +27,9 @@ class ImgModal extends React.Component {
     if (this.props.currentImage) {
       image_url = this.props.currentImage.img_url;
       username =
-      <div>
-        <div className="modal_pro_pic">
-          <img src={this.props.image_owner.pro_pic} />
+      <div className="modal-user-info">
+        <div >
+          <img className="modal-pro-pic" src={this.props.image_owner.pro_pic} />
         </div>
         <div>
           {this.props.image_owner.username}
@@ -53,6 +53,7 @@ class ImgModal extends React.Component {
           <img src={image_url} />
         </div>
         <div className="side_bar">
+          {username}
           <div className="side_bar_top">
             <div className="options">
               {dropdown}

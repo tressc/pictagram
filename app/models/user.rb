@@ -15,6 +15,10 @@ class User < ApplicationRecord
   class_name: :Image,
   foreign_key: :author_id
 
+  has_many :likes,
+  through: :images,
+  source: :likes
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
