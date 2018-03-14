@@ -1,5 +1,10 @@
 class Api::ImagesController < ApplicationController
 
+  def index
+    @images = Image.all.reject {|img| img.author_id == params[:user_id].to_i}
+    render :index
+  end
+
   def create
 
     @image = Image.new(image_params)
