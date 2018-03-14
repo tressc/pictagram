@@ -17,6 +17,7 @@ const imageReducer = (state = { images: {} }, action) => {
     case DESTROY_IMAGE:
       let newState = merge({}, state);
       delete newState[action.id];
+      debugger
       return newState;
     default:
       return state;

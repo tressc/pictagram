@@ -3,8 +3,13 @@ import IndexPage from './index';
 import { fetchImages } from '../../actions/image_actions';
 
 const msp = (state) => {
+  debugger
   return {
     currentUser: state.session.currentUser,
+    images: Object.values(state.entities.images.images)
+    // .map(img => {
+    //   if (!state.session.currentUser)
+    // })
   };
 };
 

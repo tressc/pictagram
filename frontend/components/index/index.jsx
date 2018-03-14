@@ -2,12 +2,24 @@ import React from 'react';
 
 class Index extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchImages(this.props.currentUser.id);
+  }
+
   render() {
-    console.log('hellooooo');
+    let allImages = [];
+    if (this.props.images) {
+      allImages = this.props.images.slice().reverse().map(img => {
+        return (
+          <img src={img.img_url} />
+        );
+      });
+    }
     return (
       <div className="index">
-        <h1>hsdfhsdfksdf</h1>
-        <button onClick={() => this.props.fetchImages(this.props.currentUser.id)}>click me</button>;
+        <ul>
+          {allImages}
+        </ul>
       </div>
     );
   }

@@ -1,4 +1,17 @@
 .index {
   position: relative;
   top: 75px;
+  display: flex;
+  justify-content: center;
+}
+
+.index ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index ul img {
+  max-width: 615px;
+  max-height: 615px;
 }
