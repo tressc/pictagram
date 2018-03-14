@@ -2,7 +2,7 @@ import { RECEIVE_USER, UPDATE_USER, RECEIVE_USERS } from '../actions/user_action
 import { DESTROY_IMAGE, RECEIVE_IMAGE } from '../actions/image_actions';
 import { merge } from 'lodash';
 
-const userReducer = (state = { users: {} }, action) => {
+const userReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USERS:
@@ -15,11 +15,7 @@ const userReducer = (state = { users: {} }, action) => {
         newState[Object.keys(newState)[0]].user.image_ids.splice(idx, 1);
       return newState;
     case RECEIVE_USER:
-    const imgIds = action.user.images;
-      return merge({}, state, {[action.user.user.id]:
-        {user: action.user.user,
-        images: imgIds}
-      });
+      return merge({}, state, {[action.user.user.id]: action.user.user});
     case RECEIVE_IMAGE:
       let imgUser = state[action.image.author_id];
       let newArr = imgUser.user.image_ids.slice();

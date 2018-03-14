@@ -13,11 +13,11 @@
 
 .idx_img {
   margin: 30px;
-  border: 2px solid cyan;
+  border: 1px solid #e6e6e6;
 }
 
 .idx_img_top {
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 615px;
   height: 60px;
   display: flex;
@@ -33,10 +33,19 @@
   margin: 0 15px 0 15px;
 }
 
+.author_info {
+  display: flex;
+  align-items: center;
+}
+
+.author_info span {
+  color: black;
+}
+
 .idx_img_mid {
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 615px;
   height: 615px;
 }

@@ -10,22 +10,26 @@ class Index extends React.Component {
   }
 
   render() {
+    debugger
     let allImages = [];
-    let authorPic = null;
+    let authorInfo = null;
     if (this.props.images) {
       allImages = this.props.images.slice().reverse().map(img => {
         if (this.props.users[img.author_id]) {
-          authorPic =
-          <div>
+          authorInfo =
+          <div className="author_info">
             <Link to={`/users/${img.author_id}`}>
               <img src={this.props.users[img.author_id].pro_pic} />
+            </Link>
+            <Link to={`/users/${img.author_id}`}>
+              <span>{this.props.users[img.author_id].username}</span>
             </Link>
           </div>;
         }
         return (
           <div className="idx_img" key={img.id}>
             <div className="idx_img_top">
-              {authorPic}
+              {authorInfo}
             </div>
             <div className="idx_img_mid">
               <img src={img.img_url} key={img.id} img-id={img.id}/>

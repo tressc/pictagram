@@ -6,7 +6,7 @@ import { fetchUsers } from '../../actions/user_actions';
 const msp = (state) => {
   return {
     currentUser: state.session.currentUser,
-    images: Object.values(state.entities.images.images),
+    images: Object.values(state.entities.images),
     users: state.entities.users
   };
 };

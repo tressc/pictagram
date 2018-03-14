@@ -24,8 +24,8 @@ class Profile extends React.Component {
     let username;
     let pro_pic = "";
     if (this.props.user) {
-      username = this.props.user.user.username;
-      pro_pic = this.props.user.user.pro_pic;
+      username = this.props.user.username;
+      pro_pic = this.props.user.pro_pic;
       userImages = this.props.images.length;
       images = this.props.images.slice(0).reverse().map(img => {
         return (
@@ -36,7 +36,7 @@ class Profile extends React.Component {
           </div>
         );
       });
-      if (this.props.user.user.id === this.props.currentUser.id) {
+      if (this.props.user.id === this.props.currentUser.id) {
         button = <button onClick={() => this.props.openModal('pro_pic')}>Edit Profile</button>;
       } else {
         button = <button>Follow</button>;
