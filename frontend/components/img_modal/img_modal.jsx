@@ -28,7 +28,7 @@ class ImgModal extends React.Component {
     let dropdown = null;
     let username = null;
     if (this.props.currentImage) {
-      image_url = this.props.currentImage.img_url;
+      image_url = this.props.currentImage.image_url;
       username =
       <div className="modal-user-info">
         <div >

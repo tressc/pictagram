@@ -31,7 +31,7 @@ class Profile extends React.Component {
         return (
           <div onClick={this.handleClick} key={img.id} img={img.id} className="img_holder">
             <div className="img_bg">
-              <img src={img.img_url}/>
+              <img src={img.image_url}/>
             </div>
           </div>
         );
