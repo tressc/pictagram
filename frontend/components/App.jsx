@@ -6,7 +6,7 @@ import LoginFormContainer from './session/login_form_container';
 import NavContainer from './nav/nav_container';
 import ProfileContainer from './profile/profile_container';
 import Modal from './modal/modal';
-
+import IndexContainer from './index/index_container';
 
 const App = () => {
   return (
@@ -18,6 +18,7 @@ const App = () => {
         <ProtectedRoute path='/' component={ NavContainer } className="nav_bar"/>
       </Switch>
       <ProtectedRoute path={`/users/:id`} component={ ProfileContainer } />
+      <ProtectedRoute exact path={`/`} component={ IndexContainer } />
     </div>
   );
 };
