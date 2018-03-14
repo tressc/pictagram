@@ -5,15 +5,13 @@ import { Link } from 'react-router-dom';
 class Index extends React.Component {
 
   componentDidMount() {
-    this.props.fetchImages(this.props.currentUser.id);
-    this.props.fetchUsers();
+    this.props.fetchImages();
   }
 
   render() {
-    debugger
     let allImages = [];
     let authorInfo = null;
-    if (this.props.images) {
+    if (this.props.images.length !== 0) {
       allImages = this.props.images.slice().reverse().map(img => {
         if (this.props.users[img.author_id]) {
           authorInfo =
@@ -32,7 +30,7 @@ class Index extends React.Component {
               {authorInfo}
             </div>
             <div className="idx_img_mid">
-              <img src={img.img_url} key={img.id} img-id={img.id}/>
+              <img src={img.image_url} key={img.id} img-id={img.id}/>
             </div>
             <div className="idx_img_bottom"></div>
           </div>

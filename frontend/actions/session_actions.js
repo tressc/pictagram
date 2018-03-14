@@ -17,11 +17,10 @@ const logoutUser = () => {
   };
 };
 
-const receiveCurrentUser = (data) => {
+const receiveCurrentUser = (user) => {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: data.user,
-    images: data.images
+    currentUser: user
   };
 };
 

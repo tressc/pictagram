@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login(@user)
-      render 'api/users/user_show'
+      render 'api/users/show'
     elsif !User.find_by(username: params[:user][:username])
       render json: [
         "The username you entered doesn't belong to an account." +

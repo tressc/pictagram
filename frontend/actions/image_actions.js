@@ -12,10 +12,11 @@ const receiveImage = (image) => {
   };
 };
 
-const receiveImages = (images) => {
+const receiveImages = ({images, users}) => {
   return {
     type: RECEIVE_IMAGES,
-    images
+    images,
+    users
   };
 };
 
@@ -53,9 +54,9 @@ export const fetchImage = (id) => (dispatch) => {
   });
 };
 
-export const fetchImages = (filter) => (dispatch) => {
-  return APIUtil.fetchImages(filter).then(images => {
-    dispatch(receiveImages(images));
+export const fetchImages = () => (dispatch) => {
+  return APIUtil.fetchImages().then(payload => {
+    dispatch(receiveImages(payload));
   }, errors => {
     dispatch(receiveErrors(errors.responseJSON));
   });

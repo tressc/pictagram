@@ -7,15 +7,15 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @images = @user.images
-    render :user_show
+    # @images = @user.images
+    render :show
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render :user_show
+      render :show
     else
       render json: @user.errors.full_messages, status: 403
     end
@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.pro_pic = params[:image][:image]
     if @user.save
-      render :user_show
+      render :show
     else
       render json: @user.errors.full_messages, status: 403
     end

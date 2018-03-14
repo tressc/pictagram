@@ -1,7 +1,7 @@
 class Api::ImagesController < ApplicationController
 
   def index
-    @images = Image.all.reject {|img| img.author_id == params[:user_id].to_i}
+    @images = Image.includes(:author).where.not(author_id: current_user.id)
     render :index
   end
 

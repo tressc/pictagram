@@ -3,6 +3,8 @@
   top: 75px;
   display: flex;
   justify-content: center;
+  background-color: #fafafa;
+  height: 120vh;
 }
 
 .index ul {
@@ -14,6 +16,7 @@
 .idx_img {
   margin: 30px;
   border: 1px solid #e6e6e6;
+  background-color: white;
 }
 
 .idx_img_top {
@@ -40,6 +43,10 @@
 
 .author_info span {
   color: black;
+}
+
+.author_info span:active {
+  color: gray;
 }
 
 .idx_img_mid {

@@ -42,7 +42,7 @@ class UploadForm extends React.Component {
     return (
       <div className="upload_form">
         <div className="choose_file">
-          <label for="file_upload" class="custom_file_upload">
+          <label htmlFor="file_upload" className="custom_file_upload">
             <span>
               Choose File
             </span>
