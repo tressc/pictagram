@@ -15,3 +15,10 @@ export const editUser = (pro_pic, id) => {
     data: pro_pic
   });
 };
+
+export const fetchUsers = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/users'
+  });
+};

@@ -1,5 +1,11 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    debugger
+    render :index
+  end
+
   def show
     @user = User.find(params[:id])
     @images = @user.images

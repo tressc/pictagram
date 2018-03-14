@@ -6,9 +6,6 @@ const msp = (state) => {
   return {
     currentUser: state.session.currentUser,
     images: Object.values(state.entities.images.images)
-    // .map(img => {
-    //   if (!state.session.currentUser)
-    // })
   };
 };
 

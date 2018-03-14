@@ -24,3 +24,5 @@ export const fetchUser = (id) => (dispatch) => {
 export const editUser = (pro_pic, id) => dispatch => {
   return APIUtil.editUser(pro_pic, id).then(user => dispatch(updateUser(user)));
 };
+
+// export const fetchUsers = 
