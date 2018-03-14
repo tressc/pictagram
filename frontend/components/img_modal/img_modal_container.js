@@ -11,7 +11,7 @@ const msp = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     currentImage: currentImage,
-    image_owner: state.entities.users[currentImage.author_id].user,
+    image_owner: state.entities.users[currentImage.author_id]
   };
 };
 

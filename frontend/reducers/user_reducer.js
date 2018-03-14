@@ -18,11 +18,11 @@ const userReducer = (state = {}, action) => {
       return merge({}, state, {[action.user.user.id]: action.user.user});
     case RECEIVE_IMAGE:
       let imgUser = state[action.image.author_id];
-      let newArr = imgUser.user.image_ids.slice();
+      let newArr = imgUser.image_ids.slice();
       if (!newArr.includes(action.image.id)) {
         newArr.push(action.image.id);
       }
-      return merge({}, state, {[imgUser.user.id]: {user: {image_ids: newArr}}});
+      return merge({}, state, {[imgUser.id]: {image_ids: newArr}});
     default:
       return state;
   }
