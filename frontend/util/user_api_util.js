@@ -4,3 +4,14 @@ export const getUser = (id) => {
     url: `/api/users/${id}`
   });
 };
+
+export const editUser = (pro_pic, id) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${id}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: pro_pic
+  });
+};

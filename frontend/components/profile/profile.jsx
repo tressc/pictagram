@@ -8,7 +8,6 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-
     this.props.fetchUser(parseInt(this.props.match.params.id));
   }
 
@@ -20,22 +19,28 @@ class Profile extends React.Component {
 
   render() {
     let images;
+    let button;
     let userImages = [];
     let username;
     let pro_pic = "";
     if (this.props.user) {
       username = this.props.user.user.username;
       pro_pic = this.props.user.user.pro_pic;
-        userImages = this.props.images.length;
-        images = this.props.images.slice(0).reverse().map(img => {
-          return (
-            <div onClick={this.handleClick} key={img.id} img={img.id} className="img_holder">
-              <div className="img_bg">
-                <img src={img.img_url}/>
-              </div>
+      userImages = this.props.images.length;
+      images = this.props.images.slice(0).reverse().map(img => {
+        return (
+          <div onClick={this.handleClick} key={img.id} img={img.id} className="img_holder">
+            <div className="img_bg">
+              <img src={img.img_url}/>
             </div>
-          );
-        });
+          </div>
+        );
+      });
+      if (this.props.user.user.id === this.props.currentUser.id) {
+        button = <button>Edit Profile</button>;
+      } else {
+        button = <button>Follow</button>
+      }
     }
     return (
       <div className="profile">
@@ -47,7 +52,7 @@ class Profile extends React.Component {
             <div className="profile_data">
               <div className="profile_username">
                 <span>{username}</span>
-                <button>Follow</button>
+                {button}
               </div>
               <div className="profile_stats">
                 <div className="stats_posts">

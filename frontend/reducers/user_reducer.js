@@ -1,10 +1,12 @@
-import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER, UPDATE_USER } from '../actions/user_actions';
 import { DESTROY_IMAGE, RECEIVE_IMAGE } from '../actions/image_actions';
 import { merge } from 'lodash';
 
 const userReducer = (state = { users: {} }, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case UPDATE_USER:
+      debugger
     case DESTROY_IMAGE:
       let newState = merge({}, state);
         let idx = newState[Object.keys(newState)[0]].user.image_ids.indexOf(action.id);
