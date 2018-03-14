@@ -13,7 +13,7 @@ class Index extends React.Component {
     let authorInfo = null;
     if (this.props.images.length !== 0) {
       allImages = this.props.images.slice().reverse().map(img => {
-        if (this.props.users[img.author_id]) {
+        if (img.author_id !== this.props.currentUser.id) {
           authorInfo =
           <div className="author_info">
             <Link to={`/users/${img.author_id}`}>
@@ -23,19 +23,21 @@ class Index extends React.Component {
               <span>{this.props.users[img.author_id].username}</span>
             </Link>
           </div>;
+          return (
+            <div className="idx_img" key={img.id}>
+              <div className="idx_img_top">
+                {authorInfo}
+              </div>
+              <div className="idx_img_mid">
+                <img src={img.image_url} key={img.id} img-id={img.id}/>
+              </div>
+              <div className="idx_img_bottom"></div>
+            </div>
+          );
         }
-        return (
-          <div className="idx_img" key={img.id}>
-            <div className="idx_img_top">
-              {authorInfo}
-            </div>
-            <div className="idx_img_mid">
-              <img src={img.image_url} key={img.id} img-id={img.id}/>
-            </div>
-            <div className="idx_img_bottom"></div>
-          </div>
-        );
-      });
+      }
+
+    );
     }
     return (
       <div className="index">
