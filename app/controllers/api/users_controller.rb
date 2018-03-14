@@ -18,7 +18,7 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.pro_pic = params[:pro_pic]
+    @user.pro_pic = params[:image][:image]
     if @user.save
       render :user_show
     else
