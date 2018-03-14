@@ -11,11 +11,6 @@
   align-items: center;
 }
 
-.index ul img {
-  max-width: 615px;
-  max-height: 615px;
-}
-
 .idx_img {
   margin: 30px;
   border: 2px solid cyan;
@@ -25,6 +20,17 @@
   border: 1px solid red;
   width: 615px;
   height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.idx_img_top img {
+  border-radius: 50%;
+  max-width: 30px;
+  max-height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  margin: 0 15px 0 15px;
 }
 
 .idx_img_mid {
@@ -33,6 +39,10 @@
   border: 1px solid red;
   width: 615px;
   height: 615px;
+}
+.idx_img_mid img {
+  max-width: 615px;
+  max-height: 615px;
 }
 
 .idx_img_bottom {

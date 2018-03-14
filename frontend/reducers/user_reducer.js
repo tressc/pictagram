@@ -6,7 +6,7 @@ const userReducer = (state = { users: {} }, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USERS:
-      debugger
+      return merge({}, state, action.users);
     case UPDATE_USER:
       return merge({}, state, {[action.user.user.id]: action.user});
     case DESTROY_IMAGE:
