@@ -15,3 +15,28 @@
   max-width: 615px;
   max-height: 615px;
 }
+
+.idx_img {
+  margin: 30px;
+  border: 2px solid cyan;
+}
+
+.idx_img_top {
+  border: 1px solid red;
+  width: 615px;
+  height: 60px;
+}
+
+.idx_img_mid {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+  width: 615px;
+  height: 615px;
+}
+
+.idx_img_bottom {
+  border: 1px solid red;
+  width: 615px;
+  height: 100px;
+}

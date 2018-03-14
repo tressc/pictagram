@@ -11,7 +11,14 @@ class Index extends React.Component {
     if (this.props.images) {
       allImages = this.props.images.slice().reverse().map(img => {
         return (
-          <img src={img.img_url} key={img.id} img-id={img.id}/>
+          <div className="idx_img">
+            <div className="idx_img_top">
+            </div>
+            <div className="idx_img_mid">
+              <img src={img.img_url} key={img.id} img-id={img.id}/>
+            </div>
+            <div className="idx_img_bottom"></div>
+          </div>
         );
       });
     }
