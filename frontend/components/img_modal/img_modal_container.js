@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ImgModal from './img_modal';
 import { closeModal } from '../../actions/modal_actions';
-import { fetchImage, deleteImage } from '../../actions/image_actions';
-import { fetchUser } from '../../actions/user_actions';
+import { deleteImage } from '../../actions/image_actions';
+// import { fetchUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
   
@@ -15,13 +15,15 @@ const msp = (state, ownProps) => {
   };
 };
 
+//TODO grab image and imageAuthor from state
+
 const mdp = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
-    fetchImage: (id) => dispatch(fetchImage(id)),
-    removeImage: () => dispatch(removeImage()),
+    // fetchImage: (id) => dispatch(fetchImage(id)),
+    // removeImage: () => dispatch(removeImage()),
     deleteImage: (id) => dispatch(deleteImage(id)),
-    fetchUser: (id) => dispatch(fetchUser(id))
+    // fetchUser: (id) => dispatch(fetchUser(id))
   };
 };
 

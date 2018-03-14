@@ -3,5 +3,7 @@ json.user do
 end
 
 json.images do
-  // get that users images
+  @user.images.each do |image|
+    json.partial! 'api/images/image', image: image
+  end
 end

@@ -8,7 +8,7 @@ class ImgModal extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchImage(this.props.currentImage.id);
+    // this.props.fetchImage(this.props.currentImage.id);
   }
 
 
