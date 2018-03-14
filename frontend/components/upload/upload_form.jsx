@@ -23,12 +23,16 @@ class UploadForm extends React.Component {
     }
   }
 
-  handleSubmit(e) {
+  handleSubmit(formType) {
     const user = window.store.getState().session.currentUser.id;
     const newImage = new FormData();
     if (this.state.imageFile) {
       newImage.append("image[image]", this.state.imageFile);
-      this.props.createImage(newImage);
+      if (formType === 'post') {
+        this.props.createImage(newImage);
+      } else if (formType === 'propic') {
+        this.props.editUser(newImage, user);
+      }
       this.props.closeModal();
     }
   }
@@ -52,7 +56,7 @@ class UploadForm extends React.Component {
         </div>
         <div className="buttons">
           <button onClick={this.props.closeModal}>Cancel</button>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button onClick={() => this.handleSubmit(this.props.formType)}>Submit</button>
         </div>
       </div>
     );

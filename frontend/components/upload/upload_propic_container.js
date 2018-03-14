@@ -18,4 +18,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(null, mdp)(UploadForm);
+export default connect(msp, mdp)(UploadForm);

@@ -37,9 +37,9 @@ class Profile extends React.Component {
         );
       });
       if (this.props.user.user.id === this.props.currentUser.id) {
-        button = <button>Edit Profile</button>;
+        button = <button onClick={() => this.props.openModal('pro_pic')}>Edit Profile</button>;
       } else {
-        button = <button>Follow</button>
+        button = <button>Follow</button>;
       }
     }
     return (

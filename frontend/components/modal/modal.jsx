@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import UploadFormContainer from '../upload/upload_form_container';
 import ImgModalContainer from '../img_modal/img_modal_container';
+import UploadProPicContainer from '../upload/upload_propic_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -15,6 +16,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'img':
       component = <ImgModalContainer />;
+      break;
+    case 'pro_pic':
+      component = <UploadProPicContainer />;
       break;
     default:
       return null;
