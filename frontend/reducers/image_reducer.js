@@ -11,10 +11,11 @@ const imageReducer = (state = {}, action) => {
     case RECEIVE_IMAGE:
       return merge({}, state, {[action.image.id]: {img_url: action.image.image_url, id: action.image.id, author_id: action.image.author_id}});
     case RECEIVE_CURRENT_USER:
+    debugger
       return merge({}, state, action.images);
     case RECEIVE_USER:
     debugger
-      return merge({}, state, action.user.images);
+      return merge({}, state, action.images);
     case DESTROY_IMAGE:
       let newState = merge({}, state);
       delete newState[action.id];
