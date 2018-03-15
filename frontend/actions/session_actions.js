@@ -17,7 +17,7 @@ const logoutUser = () => {
   };
 };
 
-const receiveCurrentUser = ({user, images}) => {
+const receiveCurrentUser = ({user, images, comments}) => {
   return {
     type: RECEIVE_CURRENT_USER,
     user,

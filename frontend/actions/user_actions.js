@@ -4,7 +4,7 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const UPDATE_USER = "UPDATE_USER";
 export const RECEIVE_USERS = "RECEIVE_USERS";
 
-const receiveUser = ({user, images}) => {
+const receiveUser = ({user, images, comments}) => {
   return {
     type: RECEIVE_USER,
     user,
@@ -28,7 +28,7 @@ const receiveUsers = (users) => {
 };
 
 export const fetchUser = (id) => (dispatch) => {
-  return APIUtil.getUser(id).then(user => dispatch(receiveUser(user)));
+  return APIUtil.getUser(id).then(payload => dispatch(receiveUser(payload)));
 };
 
 export const editUser = (pro_pic, id) => dispatch => {

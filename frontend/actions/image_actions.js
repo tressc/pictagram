@@ -13,7 +13,7 @@ const receiveImage = ({image, comments}) => {
   };
 };
 
-const receiveImages = ({images, users}) => {
+const receiveImages = ({images, users, comments}) => {
   return {
     type: RECEIVE_IMAGES,
     images,

@@ -5,8 +5,11 @@ class Api::UsersController < ApplicationController
     render :index
   end
 
+# TODO the below AR might not be correct. Needs to grab all the comments belonging to
+# those images, irrespective of user
+
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(images: :comments).find(params[:id])
     render :show
   end
 

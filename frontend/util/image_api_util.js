@@ -23,10 +23,9 @@ export const deleteImage = (id) => {
   });
 };
 
-export const fetchImages = (filter) => {
+export const fetchImages = () => {
   return $.ajax({
     method: 'GET',
     url: '/api/images',
-    data: filter
   });
 };
