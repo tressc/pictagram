@@ -14,8 +14,13 @@ const userReducer = (state = {}, action) => {
       return merge({}, state, {[action.user.id]: action.user});
     case DESTROY_IMAGE:
       let newState = merge({}, state);
-        let idx = newState[Object.keys(newState)[0]].user.image_ids.indexOf(action.id);
-        newState[Object.keys(newState)[0]].user.image_ids.splice(idx, 1);
+      let users = Object.keys(newState);
+      users.forEach(user => {
+        let image_ids = newState[user].image_ids;
+        while (image_ids.includes(action.id)) {
+          image_ids.splice(image_ids.indexOf(action.id), 1);
+        }
+      });
       return newState;
     case RECEIVE_USER:
       return merge({}, state, {[action.user.id]: action.user});
