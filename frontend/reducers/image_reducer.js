@@ -1,11 +1,14 @@
 import { RECEIVE_IMAGE, RECEIVE_IMAGES, DESTROY_IMAGE } from '../actions/image_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 import { merge } from 'lodash';
 
 const imageReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case RECEIVE_COMMENT:
+      return merge({}, state, state[action.comment.img_id].comment_ids.push(action.comment.id));
     case RECEIVE_IMAGES:
       return merge({}, state, action.images);
     case RECEIVE_IMAGE:
