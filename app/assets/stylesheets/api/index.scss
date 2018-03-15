@@ -64,5 +64,24 @@
 .idx_img_bottom {
   border: 1px solid red;
   width: 615px;
+  height: 200px;
+}
+
+.liking {
+  height: 60px;
+  border: 1px solid red;
+}
+
+.comments_display {
   height: 100px;
+  border-bottom: 1px solid cyan;
+}
+
+.comment_form textarea {
+  overflow-y: auto;
+  resize: none;
+  outline: none;
+  width: 550px;
+  height: 18px;
+  font-size: 15px;
 }

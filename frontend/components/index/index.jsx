@@ -31,7 +31,15 @@ class Index extends React.Component {
               <div className="idx_img_mid">
                 <img src={img.image_url} key={img.id} img-id={img.id}/>
               </div>
-              <div className="idx_img_bottom"></div>
+              <div className="idx_img_bottom">
+                <div className="liking"></div>
+                <div className="comments_display"></div>
+                <div className="comment_form">
+                  <form>
+                    <textarea placeholder="Add a comment..."></textarea>
+                  </form>
+                </div>
+              </div>
             </div>
           );
         }

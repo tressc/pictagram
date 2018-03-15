@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import IndexPage from './index';
 import { fetchImages } from '../../actions/image_actions';
+import { createComment } from '../../actions/comment_actions';
 
 const msp = (state) => {
   return {
@@ -12,7 +13,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    fetchImages: () => dispatch(fetchImages())
+    fetchImages: () => dispatch(fetchImages()),
+    createComment: (comment) => dispatch(createComment(comment))
   };
 };
 
