@@ -17,7 +17,8 @@ const receiveImages = ({images, users, comments}) => {
   return {
     type: RECEIVE_IMAGES,
     images,
-    users
+    users,
+    comments
   };
 };
 

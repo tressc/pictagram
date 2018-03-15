@@ -32,6 +32,7 @@ class Index extends React.Component {
     e.preventDefault();
     const comment = Object.assign({}, this.state);
     this.props.createComment({comment: comment});
+    this.setState({body: ""});
   }
 
   render() {
@@ -62,7 +63,7 @@ class Index extends React.Component {
                 <div className="comments_display"></div>
                 <div className="comment_form">
                   <form onSubmit={this.handleSubmit}>
-                    <input placeholder="Add a comment..." onChange={this.update(img.id)}></input>
+                    <input placeholder="Add a comment..." onChange={this.update(img.id)} value={this.state.body}></input>
                   </form>
                 </div>
               </div>
