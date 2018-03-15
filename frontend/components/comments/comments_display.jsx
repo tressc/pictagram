@@ -1,15 +1,17 @@
 import React from 'react';
 
 const CommentsDisplay = ({comments, ids, users}) => {
+
   const imgComments = ids.slice().reverse().map(id => {
-    return <li key={id}>
+    return <div key={id} className="ind_comment">
+      <span className="comment_author">{users[comments[id].user_id].username}</span>
       <span>{comments[id].body}</span>
-    </li>
+    </div>
   })
   return (
-    <ul>
+    <div>
       {imgComments}
-    </ul>
+    </div>
   );
 };
 
