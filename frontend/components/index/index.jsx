@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentsDisplay from '../comments/comments_display';
 
 
 class Index extends React.Component {
@@ -60,7 +61,9 @@ class Index extends React.Component {
               </div>
               <div className="idx_img_bottom">
                 <div className="liking"></div>
-                <div className="comments_display"></div>
+                <div className="comments_display">
+                  <CommentsDisplay ids={img.comment_ids} comments={this.props.comments} users={this.props.users}/>
+                </div>
                 <div className="comment_form">
                   <form onSubmit={this.handleSubmit}>
                     <input placeholder="Add a comment..." onChange={this.update(img.id)} value={this.state.body}></input>

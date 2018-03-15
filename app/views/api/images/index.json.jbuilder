@@ -11,6 +11,11 @@ json.users do
     json.set! image.author.id do
       json.partial! 'api/users/user', user: image.author
     end
+    image.comments.each do |comment|
+      json.set! comment.user_id do
+        json.partial! 'api/users/user', user: comment.user
+      end
+    end
   end
 end
 

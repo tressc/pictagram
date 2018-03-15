@@ -7,7 +7,8 @@ const msp = (state) => {
   return {
     currentUser: state.session.currentUser,
     images: Object.values(state.entities.images),
-    users: state.entities.users
+    users: state.entities.users,
+    comments: state.entities.comments
   };
 };
 
