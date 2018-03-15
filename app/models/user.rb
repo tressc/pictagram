@@ -15,6 +15,10 @@ class User < ApplicationRecord
   class_name: :Image,
   foreign_key: :author_id
 
+  has_many :comments,
+  class_name: :Comment,
+  foreign_key: :user_id
+
   has_many :likes,
   through: :images,
   source: :likes
