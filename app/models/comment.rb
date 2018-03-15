@@ -2,10 +2,10 @@ class Comment < ApplicationRecord
   validates :body, :img_id, :user_id, presence: true
 
   belongs_to :user,
-  className: :User,
+  class_name: :User,
   foreign_key: :user_id
 
   belongs_to :image,
-  className: :Image,
+  class_name: :Image,
   foreign_key: :img_id
 end

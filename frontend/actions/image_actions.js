@@ -5,10 +5,11 @@ export const RECEIVE_IMAGES = "RECEIVE_IMAGES";
 export const RECEIVE_IMAGE_ERRORS = "RECEIVE_IMAGE_ERRORS";
 export const DESTROY_IMAGE = "DESTROY_IMAGE";
 
-const receiveImage = (image) => {
+const receiveImage = ({image, comments}) => {
   return {
     type: RECEIVE_IMAGE,
-    image
+    image,
+    comments
   };
 };
 
@@ -47,8 +48,8 @@ export const createImage = (image) => (dispatch) => {
 };
 
 export const fetchImage = (id) => (dispatch) => {
-  return APIUtil.showImage(id).then(image => {
-    dispatch(receiveImage(image));
+  return APIUtil.showImage(id).then(payload => {
+    dispatch(receiveImage(payload));
   }, errors => {
     dispatch(receiveErrors(errors.responseJSON));
   });

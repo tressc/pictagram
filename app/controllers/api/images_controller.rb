@@ -18,7 +18,7 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.find(params[:id])
+    @image = Image.includes(:comments).find(params[:id])
   end
 
   def destroy
