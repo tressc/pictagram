@@ -17,7 +17,7 @@ const destroyComment = (id) => {
   };
 };
 
-const createComment = (comment) => (dispatch) => {
+export const createComment = (comment) => (dispatch) => {
   return APIUtil.createComment(comment).then(c => dispatch(receiveComment(c)));
 };
 

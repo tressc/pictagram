@@ -4,8 +4,34 @@ import { Link } from 'react-router-dom';
 
 class Index extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      user_id: this.props.currentUser.id,
+      img_id: null,
+      body: ""
+    };
+  }
+
   componentDidMount() {
     this.props.fetchImages();
+  }
+
+  update(id) {
+    return (e) => {
+      this.setState({
+        img_id: id,
+        body: e.currentTarget.value
+      });
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const comment = Object.assign({}, this.state);
+    this.props.createComment({comment: comment});
   }
 
   render() {
@@ -35,8 +61,8 @@ class Index extends React.Component {
                 <div className="liking"></div>
                 <div className="comments_display"></div>
                 <div className="comment_form">
-                  <form>
-                    <textarea placeholder="Add a comment..."></textarea>
+                  <form onSubmit={this.handleSubmit}>
+                    <input placeholder="Add a comment..." onChange={this.update(img.id)}></input>
                   </form>
                 </div>
               </div>
