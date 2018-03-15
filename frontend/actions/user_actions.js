@@ -12,10 +12,11 @@ const receiveUser = ({user, images}) => {
   };
 };
 
-const updateUser = (user) => {
+const updateUser = ({user, images}) => {
   return {
     type: UPDATE_USER,
-    user
+    user,
+    images
   };
 };
 

@@ -17,6 +17,12 @@ class Profile extends React.Component {
     this.props.openModal('img');
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.id !== this.props.match.params.id) {
+      nextProps.fetchUser(parseInt(nextProps.match.params.id));
+    }
+  }
+
   render() {
     let images;
     let button;
