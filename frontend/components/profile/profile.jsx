@@ -7,6 +7,8 @@ class Profile extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  //TODO remove second hit to DB
+
   componentDidMount() {
     this.props.fetchUser(parseInt(this.props.match.params.id));
     this.props.fetchImages();
@@ -22,6 +24,7 @@ class Profile extends React.Component {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       nextProps.fetchUser(parseInt(nextProps.match.params.id));
       this.props.fetchImages();
+      this.props.closeModal();
     }
   }
 
@@ -32,7 +35,7 @@ class Profile extends React.Component {
     let username;
     let pro_pic = "";
     if (this.props.user && this.props.images) {
-      debugger
+
       username = this.props.user.username;
       pro_pic = this.props.user.pro_pic;
       userImages = this.props.images.length;

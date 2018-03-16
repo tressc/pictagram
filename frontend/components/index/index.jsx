@@ -16,6 +16,8 @@ class Index extends React.Component {
     };
   }
 
+  //TODO remove second hit to DB
+
   componentDidMount() {
     this.props.fetchImages();
     this.props.fetchUsers();

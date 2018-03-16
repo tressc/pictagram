@@ -20,7 +20,8 @@ class ImgModal extends React.Component {
     this.props.closeModal();
   }
 
-  ////////////////////////
+  //TODO remove second hit to DB
+
   componentDidMount() {
     this.props.fetchImage();
     this.props.fetchUsers();
