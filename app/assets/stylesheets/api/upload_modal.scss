@@ -6,7 +6,7 @@
   background: #fafafa;
   width: 500px;
   height: 550px;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .upload_form button {
@@ -70,9 +70,17 @@ input[type="file"] {
   height: 30px;
   outline: none;
   border: 1px solid #939393;
-  border-radius: 3px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .buttons button:active {
   color: #6f6f6f;
+}
+
+.submit_button {
+  font-size: 14px;
+  line-height: 26px;
+  color: #FFFFFF;
+  background-color: #3897f0;
 }
