@@ -30,6 +30,51 @@
   z-index: 10;
 }
 
+.background img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.mounted_image {
+  position: absolute;
+  height: 434px;
+  width: 246px;
+  top: 96px;
+  left: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+
+   animation-timing-function: ease;
+   -webkit-animation-timing-function: ease;
+   -webkit-animation: home-page ease 20s both infinite;
+   -moz-animation: home-page ease 20s both infinite;
+   animation: home-page ease 20s both infinite;
+
+   background-image:url(http://s3.us-east-2.amazonaws.com/picta-gram-pro/images/images/000/000/093/original/Screen_Shot_2018-03-16_at_10.46.12_AM.png?1521212988);
+}
+
+@keyframes home-page {
+ 0% {
+   background-image: url(http://s3.us-east-2.amazonaws.com/picta-gram-pro/images/images/000/000/093/original/Screen_Shot_2018-03-16_at_10.46.12_AM.png?1521212988);
+ }
+ 33% {
+   background-image: url(http://s3.us-east-2.amazonaws.com/picta-gram-pro/images/images/000/000/086/original/Screen_Shot_2018-03-16_at_10.29.01_AM.png?1521212566);
+ }
+ 66% {
+   background-image: url(http://s3.us-east-2.amazonaws.com/picta-gram-pro/images/images/000/000/095/original/Screen_Shot_2018-03-15_at_11.08.40_PM.png?1521213053);
+ }
+ 100% {
+   background-image: url(http://s3.us-east-2.amazonaws.com/picta-gram-pro/images/images/000/000/093/original/Screen_Shot_2018-03-16_at_10.46.12_AM.png?1521212988);
+ }
+}
+
+
 .session button {
   box-sizing: border-box;
   outline: none;
