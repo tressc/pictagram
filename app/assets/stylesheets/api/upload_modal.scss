@@ -65,7 +65,7 @@ input[type="file"] {
   color: #6f6f6f;
 }
 
-.buttons button {
+.cancel_button {
   width: 90px;
   height: 30px;
   outline: none;
@@ -74,13 +74,38 @@ input[type="file"] {
   cursor: pointer;
 }
 
-.buttons button:active {
+.cancel_button:active {
   color: #6f6f6f;
 }
 
+.inactive_button {
+  width: 90px;
+  height: 30px;
+  outline: none;
+  border: 1px solid #939393;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.inactive_button:active {
+  color: black;
+}
+
 .submit_button {
+  cursor: pointer;
   font-size: 14px;
   line-height: 26px;
   color: #FFFFFF;
   background-color: #3897f0;
+  border-radius: 6px;
+}
+
+.submit_button:active {
+  background-color: #73b6f4;
+  color: white;
+  outline: none;
+}
+
+.submit_button:focus {
+  outline: none;
 }

@@ -40,7 +40,7 @@ class UploadForm extends React.Component {
   //TODO separate AJAX call to create a comment if text field not blank
   render() {
     let submitButton =
-    <button onClick={() => this.handleSubmit(this.props.formType)}>Submit</button>;
+    <button onClick={() => this.handleSubmit(this.props.formType)} className="inactive_button">Submit</button>;
     if (this.state.imageFile) {
       submitButton =
       <button onClick={() => this.handleSubmit(this.props.formType)} className="submit_button">Submit</button>;
@@ -61,7 +61,7 @@ class UploadForm extends React.Component {
           </div>
         </div>
         <div className="buttons">
-          <button onClick={this.props.closeModal}>Cancel</button>
+          <button onClick={this.props.closeModal} className="cancel_button">Cancel</button>
           {submitButton}
         </div>
       </div>
