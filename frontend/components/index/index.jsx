@@ -18,6 +18,7 @@ class Index extends React.Component {
 
   componentDidMount() {
     this.props.fetchImages();
+    this.props.fetchUsers();
   }
 
   update(id) {

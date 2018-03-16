@@ -1,7 +1,7 @@
 class Api::ImagesController < ApplicationController
 
   def index
-    @images = Image.includes(:author, :comments).where.not(author_id: current_user.id)
+    @images = Image.includes(:author, :comments).all
     render :index
   end
 

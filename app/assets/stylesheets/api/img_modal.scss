@@ -83,6 +83,11 @@
   color: black;
 }
 
+.modal_comments_display .comments_display {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
 .likes {
   width: 287px;
   height: 60px;

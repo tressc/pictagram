@@ -4,6 +4,7 @@ import ImgModal from './img_modal';
 import { closeModal } from '../../actions/modal_actions';
 import { deleteImage, fetchImage } from '../../actions/image_actions';
 import { createComment } from '../../actions/comment_actions';
+import { fetchUsers } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
   
@@ -24,7 +25,8 @@ const mdp = (dispatch) => {
     fetchImage: (id) => dispatch(fetchImage(id)),
     closeModal: () => dispatch(closeModal()),
     deleteImage: (id) => dispatch(deleteImage(id)),
-    createComment: (comment) => dispatch(createComment(comment))
+    createComment: (comment) => dispatch(createComment(comment)),
+    fetchUsers: () => dispatch(fetchUsers())
   };
 };
 

@@ -23,6 +23,7 @@ class ImgModal extends React.Component {
   ////////////////////////
   componentDidMount() {
     this.props.fetchImage();
+    this.props.fetchUsers();
   }
 
   update() {

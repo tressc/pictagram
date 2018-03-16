@@ -21,6 +21,7 @@ class Profile extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       nextProps.fetchUser(parseInt(nextProps.match.params.id));
+      this.props.fetchImages();
     }
   }
 
@@ -30,7 +31,8 @@ class Profile extends React.Component {
     let userImages = [];
     let username;
     let pro_pic = "";
-    if (this.props.user) {
+    if (this.props.user && this.props.images) {
+      debugger
       username = this.props.user.username;
       pro_pic = this.props.user.pro_pic;
       userImages = this.props.images.length;

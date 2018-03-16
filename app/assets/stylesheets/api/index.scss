@@ -72,10 +72,14 @@
   margin-bottom: 5px;
 }
 
-.comments_display {
+.idx_img_bottom .comments_display {
   padding: 5px;
   max-height: 150px;
   overflow-y: auto;
+}
+
+.idx_img_bottom .comments_display a {
+  color: black;
 }
 
 .ind_comment {
