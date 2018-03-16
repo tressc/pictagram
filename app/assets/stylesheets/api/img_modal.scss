@@ -89,25 +89,31 @@
 }
 
 .likes {
-  width: 287px;
+  display: flex;
+  flex-direction: column;
+  width: 60px;
   height: 60px;
   margin: 5px 24px;
   background-color: white;
-  border: 1px solid red;
 }
 
-.add-comment {
+.fa-heart {
+  font-size: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.modal_comments_form .comment_form {
   width: 261px;
   height: 23px;
-  margin: 16px 24px;
-  background-color: lightgreen;
+  margin: 30px 20px 10px;
 }
 
-.add-comment input {
+.modal_comments_form .comment_form input {
   border: none;
-  font-size: 13px;
+  font-size: 15px;
 }
 
-.add-comment input:focus {
+.modal_comments_form .comment_form input:focus {
   border: none;
 }

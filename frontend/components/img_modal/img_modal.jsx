@@ -69,7 +69,11 @@ class ImgModal extends React.Component {
           <CommentsDisplay ids={this.props.currentImage.comment_ids} comments={this.props.comments} users={this.props.users}/>
         </div>;
       }
-      likes = <div className="likes"></div>;
+      likes =
+      <div className="likes">
+        <i class="far fa-heart"></i>
+        <span>0 Likes</span>
+      </div>;
       addComment =
       <div className="comment_form">
         <form onSubmit={this.handleSubmit}>
@@ -104,7 +108,9 @@ class ImgModal extends React.Component {
             {comments}
           </div>
           {likes}
-          {addComment}
+          <div className="modal_comments_form">
+            {addComment}
+          </div>
         </div>
       </div>
     );
