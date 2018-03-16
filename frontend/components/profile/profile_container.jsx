@@ -4,6 +4,7 @@ import Profile from './profile';
 import { openModal } from '../../actions/modal_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { receiveImgId } from '../../actions/ui_actions';
+import { fetchImages } from '../../actions/image_actions';
 
 const msp = (state, ownProps) => {
   const currentUser = state.session.currentUser;
@@ -18,7 +19,8 @@ const mdp = (dispatch) => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
     openModal: (modal) => dispatch(openModal(modal)),
-    receiveImgId: (id) => dispatch(receiveImgId(id))
+    receiveImgId: (id) => dispatch(receiveImgId(id)),
+    fetchImages: () => dispatch(fetchImages()),
   };
 };
 

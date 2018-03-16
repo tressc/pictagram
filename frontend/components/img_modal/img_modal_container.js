@@ -2,28 +2,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ImgModal from './img_modal';
 import { closeModal } from '../../actions/modal_actions';
-import { deleteImage } from '../../actions/image_actions';
-// import { fetchUser } from '../../actions/user_actions';
+import { deleteImage, fetchImage } from '../../actions/image_actions';
+import { createComment } from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => {
   
   const currentImage = state.entities.images[state.ui.img_id];
+  
   return {
     currentUser: state.session.currentUser,
     currentImage: currentImage,
-    image_owner: state.entities.users[currentImage.author_id]
+    image_owner: state.entities.users[currentImage.author_id],
+    comments: state.entities.comments,
+    users: state.entities.users,
+    id: state.ui.img_id
   };
 };
 
-//TODO grab image and imageAuthor from state
-
 const mdp = (dispatch) => {
   return {
+    fetchImage: (id) => dispatch(fetchImage(id)),
     closeModal: () => dispatch(closeModal()),
-    // fetchImage: (id) => dispatch(fetchImage(id)),
-    // removeImage: () => dispatch(removeImage()),
     deleteImage: (id) => dispatch(deleteImage(id)),
-    // fetchUser: (id) => dispatch(fetchUser(id))
+    createComment: (comment) => dispatch(createComment(comment))
   };
 };
 

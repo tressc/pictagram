@@ -14,6 +14,7 @@ const commentReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, action.comments);
     case RECEIVE_USER:
+    
       return merge({}, state, action.comments);
     case RECEIVE_COMMENT:
       return merge({}, state, {[action.comment.id]: action.comment});

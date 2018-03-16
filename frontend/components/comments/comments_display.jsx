@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CommentsDisplay = ({comments, ids, users}) => {
 
   const imgComments = ids.slice().reverse().map(id => {
     return <div key={id} className="ind_comment">
-      <span className="comment_author">{users[comments[id].user_id].username}</span>
+      <Link to={`/users/${users[comments[id].user_id].id}`} className="comment_author">{users[comments[id].user_id].username}</Link>
       <span>{comments[id].body}</span>
     </div>
   })

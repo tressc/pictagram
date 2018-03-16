@@ -8,7 +8,8 @@ const receiveUser = ({user, images, comments}) => {
   return {
     type: RECEIVE_USER,
     user,
-    images
+    images,
+    comments
   };
 };
 

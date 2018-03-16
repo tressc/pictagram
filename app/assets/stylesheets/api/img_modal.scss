@@ -72,12 +72,15 @@
   font-size: 120%;
 }
 
-.comments {
+.modal_comments_display {
   height: 360px;
   width: 287px;
   background-color: white;
-  border: 1px solid red;
   margin-left: 24px;
+}
+
+.modal_comments_display a {
+  color: black;
 }
 
 .likes {

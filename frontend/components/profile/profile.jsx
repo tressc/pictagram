@@ -9,6 +9,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(parseInt(this.props.match.params.id));
+    this.props.fetchImages();
   }
 
   handleClick(e) {
