@@ -68,8 +68,9 @@
 .liking {
   height: 60px;
   width: 100px;
-  border: 1px solid red;
-  margin-bottom: 5px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .idx_img_bottom .comments_display {

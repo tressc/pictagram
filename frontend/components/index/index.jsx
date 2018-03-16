@@ -63,7 +63,10 @@ class Index extends React.Component {
                 <img src={img.image_url} key={img.id} img-id={img.id}/>
               </div>
               <div className="idx_img_bottom">
-                <div className="liking"></div>
+                <div className="liking">
+                  <i class="far fa-heart"></i>
+                  <span>0 Likes</span>
+                </div>
                 <div className="comments_display">
                   <CommentsDisplay ids={img.comment_ids} comments={this.props.comments} users={this.props.users}/>
                 </div>

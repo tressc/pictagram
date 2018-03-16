@@ -72,11 +72,11 @@ class Profile extends React.Component {
                   <span>posts</span>
                 </div>
                 <div className="stats_followers">
-                  <span className="number">782</span>
+                  <span className="number">0</span>
                   <span>followers</span>
                 </div>
                 <div className="stats_following">
-                  <span className="number">507</span>
+                  <span className="number">0</span>
                   <span>following</span>
                 </div>
               </div>
