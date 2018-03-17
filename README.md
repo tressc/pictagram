@@ -15,9 +15,19 @@ Pictagram is built with **Ruby on Rails** in conjunction with **React** and **Re
 
 ### Features
 
-#### Image Upload
+#### Image Upload & Display
+
+Users can upload pictures as posts or profile pictures. This feature does not exist on Instagram for browser, so I had some creative leeway. I chose to implement the upload form as a modal, that dispatches a different action on submit depending on whether the user is updating their profile picture or creating a new post.
+
+Upon choosing a picture, that image is displayed in a preview window, and the submit button becomes usable. Submitted image files are stored AWS to improve performance on Heroku. All other associated information about the image, including its AWS url and author ID are stored in the database.
+
+Posts are displayed in two ways. On each user's profile page, all of their pictures are shown as a grid, and clicking on any image opens a much larger modal view where comments can be viewed and added. On the homepage posts are displayed large, with the ability to view and add comments.
 
 #### Comments
+
+When a user submits a comment on a post, the comment body is saved to the database, along with foreign keys pointing to its author and the post.
+
+In the Redux state, comments are stored in their own slice of state, and posts each have an array of keys pointing to their associated comments.
 
 ***
 
