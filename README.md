@@ -13,8 +13,20 @@ Pictagram is built with **Ruby on Rails** in conjunction with **React** and **Re
 
 ***
 
+### Features
+
+#### Image Upload
+
+#### Comments
+
+***
+
 ### Upcoming Features
 
-- Likes: Users can "like" pictures, and posts display number of likes.
+- **Likes**: Users can "like" pictures, and posts display number of likes.
 
-- Following: Users can follow other users, and their main feed is populated only by those followed users' posts.
+- **Following**: Users can follow other users, and their main feed is populated only by those followed users' posts.
+
+- **Search**: Search-bar allows user lookup via username and picture lookup via tags.
+
+- **Tags**: Posts can be given tags by their owner, and displayed according to searched tags.
