@@ -1,24 +1,20 @@
-# README
+## Pictagram
+------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Live: https://www.picta-gram.herokuapp.com/
 
-Things you may want to cover:
+Pictagram is an Instagram clone, on which users can upload and share pictures. Users can also follow other users, as well as comment on and "like" their pictures.
 
-* Ruby version
+***
 
-* System dependencies
+### Technologies
 
-* Configuration
+Pictagram is built with **Ruby on Rails** in conjunction with **React** and **Redux**. The database is configured with **PostgreSQL**, and all user uploaded images are stored on **Amazon Web Services** using the Ruby **Paperclip** gem.
 
-* Database creation
+***
 
-* Database initialization
+### Upcoming Features
 
-* How to run the test suite
+- Likes: Users can "like" pictures, and posts display number of likes.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Following: Users can follow other users, and their main feed is populated only by those followed users' posts.
