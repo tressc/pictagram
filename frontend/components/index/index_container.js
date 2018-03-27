@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import IndexPage from './index';
 import { fetchImages } from '../../actions/image_actions';
 import { createComment } from '../../actions/comment_actions';
+import { createLike } from '../../actions/like_actions';
 import { fetchUsers } from '../../actions/user_actions';
 
 const msp = (state) => {
@@ -17,7 +18,8 @@ const mdp = (dispatch) => {
   return {
     fetchImages: () => dispatch(fetchImages()),
     createComment: (comment) => dispatch(createComment(comment)),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    createLike: (like) => dispatch(createLike(like))
   };
 };
 

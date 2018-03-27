@@ -9,6 +9,7 @@ class Index extends React.Component {
     super(props);
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       user_id: this.props.currentUser.id,
       img_id: null,
@@ -39,11 +40,24 @@ class Index extends React.Component {
     this.setState({body: ""});
   }
 
+  handleClick(id) {
+  return (e) => {
+      this.props.createLike({like: {user_id: this.props.currentUser.id, img_id: id}});
+    };
+  }
+
+
   render() {
     let allImages = [];
     let authorInfo = null;
     if (this.props.images.length !== 0) {
       allImages = this.props.images.slice().reverse().map(img => {
+        let likes;
+        if (img.like_ids.length === 1) {
+          likes = "Like";
+        } else {
+          likes = "Likes";
+        }
         if (img.author_id !== this.props.currentUser.id) {
           authorInfo =
           <div className="author_info">
@@ -64,8 +78,10 @@ class Index extends React.Component {
               </div>
               <div className="idx_img_bottom">
                 <div className="liking">
-                  <i class="far fa-heart"></i>
-                  <span>0 Likes</span>
+                  <div className="toggle_like" onClick={this.handleClick(img.id)}>
+                    <i class="far fa-heart"></i>
+                  </div>
+                  <span>{img.like_ids.length + "   " + likes}</span>
                 </div>
                 <div className="comments_display">
                   <CommentsDisplay ids={img.comment_ids} comments={this.props.comments} users={this.props.users}/>
