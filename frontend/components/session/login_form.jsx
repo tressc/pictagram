@@ -42,6 +42,7 @@ class LoginForm extends React.Component {
         <div className="phones">
           <div className="background">
             <img src={window.phones}/>
+            <div className="mounted_image"></div>
           </div>
         </div>
         <div className="session_block">
