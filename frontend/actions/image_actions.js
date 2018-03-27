@@ -5,20 +5,22 @@ export const RECEIVE_IMAGES = "RECEIVE_IMAGES";
 export const RECEIVE_IMAGE_ERRORS = "RECEIVE_IMAGE_ERRORS";
 export const DESTROY_IMAGE = "DESTROY_IMAGE";
 
-const receiveImage = ({image, comments}) => {
+const receiveImage = ({image, comments, likes}) => {
   return {
     type: RECEIVE_IMAGE,
     image,
-    comments
+    comments,
+    likes
   };
 };
 
-const receiveImages = ({images, users, comments}) => {
+const receiveImages = ({images, users, comments, likes}) => {
   return {
     type: RECEIVE_IMAGES,
     images,
     users,
-    comments
+    comments,
+    likes
   };
 };
 

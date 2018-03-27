@@ -17,11 +17,13 @@ const logoutUser = () => {
   };
 };
 
-const receiveCurrentUser = ({user, images, comments}) => {
+const receiveCurrentUser = ({user, images, comments, likes}) => {
   return {
     type: RECEIVE_CURRENT_USER,
     user,
-    images
+    images,
+    comments,
+    likes
   };
 };
 

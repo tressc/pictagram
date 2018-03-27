@@ -29,3 +29,13 @@ json.comments do
     end
   end
 end
+
+json.likes do
+  @user.images.each do |image|
+    image.likes.each do |like|
+      json.set! like.id do
+        json.partial! 'api/likes/like', like: like
+      end
+    end
+  end
+end
