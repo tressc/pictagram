@@ -11,9 +11,9 @@ class Index extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      user_id: this.props.currentUser.id,
-      img_id: null,
-      body: ""
+        user_id: this.props.currentUser.id,
+        img_id: null,
+        body: "",
     };
   }
 
@@ -41,8 +41,21 @@ class Index extends React.Component {
   }
 
   handleClick(id) {
-  return (e) => {
-      this.props.createLike({like: {user_id: this.props.currentUser.id, img_id: id}});
+    return (e) => {
+      let a = null;
+      const imageLikes = this.props.imageObjects[id].like_ids;
+      const userLikes = this.props.users[this.props.currentUser.id].like_ids;
+      const inclusion = (el) => {
+        if (userLikes.includes(el)) {
+          a = el;
+          return true;
+        }
+      };
+      if (imageLikes.some(inclusion)) {
+        this.props.deleteLike(a);
+      } else {
+        this.props.createLike({like: {user_id: this.props.currentUser.id, img_id: id}});
+      }
     };
   }
 
@@ -52,11 +65,41 @@ class Index extends React.Component {
     let authorInfo = null;
     if (this.props.images.length !== 0) {
       allImages = this.props.images.slice().reverse().map(img => {
+        let fullHeart =
+        <div className="hidden full">
+          <i className="fas fa-heart"></i>;
+        </div>
+        let emptyHeart =
+        <div className="hidden empty">
+          <i className="far fa-heart"></i>;
+        </div>
         let likes;
         if (img.like_ids.length === 1) {
           likes = "Like";
         } else {
           likes = "Likes";
+        }
+        const imageLikes = this.props.imageObjects[img.id].like_ids;
+        const userLikes = this.props.users[this.props.currentUser.id].like_ids;
+        const inclusion = (el) => {
+          if (userLikes.includes(el)) {
+            return true;
+          }
+        };
+        if (imageLikes.some(inclusion)) {
+          fullHeart =
+          <div className="full">
+            <i className="fas fa-heart"></i>
+          </div>
+          $(".empty").addClass("hidden");
+          $(".full").removeClass("hidden");
+        } else {
+          emptyHeart =
+          <div className="empty">
+            <i className="far fa-heart"></i>
+          </div>
+          $(".full").addClass("hidden");
+          $(".empty").removeClass("hidden");
         }
         if (img.author_id !== this.props.currentUser.id) {
           authorInfo =
@@ -79,7 +122,8 @@ class Index extends React.Component {
               <div className="idx_img_bottom">
                 <div className="liking">
                   <div className="toggle_like" onClick={this.handleClick(img.id)}>
-                    <i class="far fa-heart"></i>
+                    {fullHeart}
+                    {emptyHeart}
                   </div>
                   <span>{img.like_ids.length + "   " + likes}</span>
                 </div>

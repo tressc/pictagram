@@ -9,7 +9,6 @@ import { fetchUsers } from '../../actions/user_actions';
 const msp = (state, ownProps) => {
 
   const currentImage = state.entities.images[state.ui.img_id];
-  debugger
   return {
     currentUser: state.session.currentUser,
     currentImage: currentImage,
