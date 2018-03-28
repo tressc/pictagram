@@ -29,11 +29,16 @@ When a user submits a comment on a post, the comment body is saved to the databa
 
 In the Redux state, comments are stored in their own slice of state, and posts each have an array of keys pointing to their associated comments.
 
+#### Likes
+
+When a user likes a post, a like is created in the database. Likes consist only of two foreign keys, one pointing to the user, the other pointing to the post.
+
+The like button displays as either an empty heart or a full red heart depending on whether the current user has already liked a given post, and creates or destroys a like on being clicked. I used two fontawesome SVGs for the hearts, which resisted the React cycle. To address this I wrapped both SVGs in divs, and conditionally display those divs by adding and removing a "hidden" class.
+
+
 ***
 
 ### Upcoming Features
-
-- **Likes**: Users can "like" pictures, and posts display number of likes.
 
 - **Following**: Users can follow other users, and their main feed is populated only by those followed users' posts.
 
