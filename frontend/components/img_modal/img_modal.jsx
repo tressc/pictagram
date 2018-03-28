@@ -86,7 +86,6 @@ class ImgModal extends React.Component {
         userLikes = "Likes";
       }
       const imageLikes = this.props.currentImage.like_ids;
-      debugger
       const currentUserLikes = this.props.users[this.props.currentUser.id].like_ids;
       const inclusion = (el) => {
         if (currentUserLikes.includes(el)) {
