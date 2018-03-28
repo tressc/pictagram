@@ -7,11 +7,29 @@ class ImgModal extends React.Component {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       user_id: this.props.currentUser.id,
       img_id: this.props.currentImage.id,
       body: ""
     };
+  }
+
+  handleClick(e) {
+      let a = null;
+      const imageLikes = this.props.currentImage.like_ids;
+      const userLikes = this.props.users[this.props.currentUser.id].like_ids;
+      const inclusion = (el) => {
+        if (userLikes.includes(el)) {
+          a = el;
+          return true;
+        }
+      };
+      if (imageLikes.some(inclusion)) {
+        this.props.deleteLike(a);
+      } else {
+        this.props.createLike({like: {user_id: this.props.currentUser.id, img_id: this.props.currentImage.id}});
+      }
   }
 
   handleDelete() {
@@ -52,7 +70,44 @@ class ImgModal extends React.Component {
     let likes = null;
     let dropdown = null;
     let username = null;
+    let fullHeart =
+    <div className="hidden full">
+      <i className="fas fa-heart"></i>
+    </div>;
+    let emptyHeart =
+    <div className="hidden empty">
+      <i className="far fa-heart"></i>
+    </div>;
     if (this.props.currentImage) {
+      let userLikes;
+      if (this.props.currentImage.like_ids.length === 1) {
+        userLikes = "Like";
+      } else {
+        userLikes = "Likes";
+      }
+      const imageLikes = this.props.currentImage.like_ids;
+      debugger
+      const currentUserLikes = this.props.users[this.props.currentUser.id].like_ids;
+      const inclusion = (el) => {
+        if (currentUserLikes.includes(el)) {
+          return true;
+        }
+      };
+      if (imageLikes.some(inclusion)) {
+        fullHeart =
+        <div className="full">
+          <i className="fas fa-heart"></i>
+        </div>;
+        $(".empty").addClass("hidden");
+        $(".full").removeClass("hidden");
+      } else {
+        emptyHeart =
+        <div className="empty">
+          <i className="far fa-heart"></i>
+        </div>;
+        $(".full").addClass("hidden");
+        $(".empty").removeClass("hidden");
+      }
       image_url = this.props.currentImage.image_url;
       username =
       <div className="modal-user-info">
@@ -71,8 +126,11 @@ class ImgModal extends React.Component {
       }
       likes =
       <div className="likes">
-        <i class="far fa-heart"></i>
-        <span>0 Likes</span>
+        <div className="toggle_like" onClick={this.handleClick}>
+          {fullHeart}
+          {emptyHeart}
+        </div>
+        <span>{this.props.currentImage.like_ids.length + "   " + userLikes}</span>
       </div>;
       addComment =
       <div className="comment_form">

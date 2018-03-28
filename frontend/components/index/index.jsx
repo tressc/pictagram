@@ -67,12 +67,12 @@ class Index extends React.Component {
       allImages = this.props.images.slice().reverse().map(img => {
         let fullHeart =
         <div className="hidden full">
-          <i className="fas fa-heart"></i>;
-        </div>
+          <i className="fas fa-heart"></i>
+        </div>;
         let emptyHeart =
         <div className="hidden empty">
-          <i className="far fa-heart"></i>;
-        </div>
+          <i className="far fa-heart"></i>
+        </div>;
         let likes;
         if (img.like_ids.length === 1) {
           likes = "Like";
@@ -90,14 +90,14 @@ class Index extends React.Component {
           fullHeart =
           <div className="full">
             <i className="fas fa-heart"></i>
-          </div>
+          </div>;
           $(".empty").addClass("hidden");
           $(".full").removeClass("hidden");
         } else {
           emptyHeart =
           <div className="empty">
             <i className="far fa-heart"></i>
-          </div>
+          </div>;
           $(".full").addClass("hidden");
           $(".empty").removeClass("hidden");
         }
