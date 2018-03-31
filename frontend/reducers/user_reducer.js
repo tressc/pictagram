@@ -20,7 +20,7 @@ const userReducer = (state = {}, action) => {
       });
       return newerState;
     case RECEIVE_CURRENT_USER:
-      return merge({}, state, action.user);
+      return merge({}, state, {[action.user.id]: action.user});
     case RECEIVE_USERS:
       return merge({}, state, action.users);
     case UPDATE_USER:
