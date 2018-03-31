@@ -70,6 +70,7 @@ class ImgModal extends React.Component {
     let likes = null;
     let dropdown = null;
     let username = null;
+    let imgDate = null;
     let fullHeart =
     <div className="hidden full">
       <i className="fas fa-heart"></i>
@@ -79,6 +80,18 @@ class ImgModal extends React.Component {
       <i className="far fa-heart"></i>
     </div>;
     if (this.props.currentImage) {
+      const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      const date = new Date(this.props.currentImage.created_at);
+      const month = monthNames[date.getMonth()];
+      const day = date.getDate();
+      const year = date.getFullYear();
+      imgDate =
+        <div className="date_display">
+          {`${month} ${day}, ${year}`}
+        </div>;
       let userLikes;
       if (this.props.currentImage.like_ids.length === 1) {
         userLikes = "Like";
@@ -165,6 +178,7 @@ class ImgModal extends React.Component {
             {comments}
           </div>
           {likes}
+          {imgDate}
           <div className="modal_comments_form">
             {addComment}
           </div>

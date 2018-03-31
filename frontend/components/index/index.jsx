@@ -65,6 +65,14 @@ class Index extends React.Component {
     let authorInfo = null;
     if (this.props.images.length !== 0) {
       allImages = this.props.images.slice().reverse().map(img => {
+        const monthNames = [
+          "January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+        const date = new Date(img.created_at);
+        const month = monthNames[date.getMonth()];
+        const day = date.getDate();
+        const year = date.getFullYear();
         let fullHeart =
         <div className="hidden full">
           <i className="fas fa-heart"></i>
@@ -129,6 +137,9 @@ class Index extends React.Component {
                 </div>
                 <div className="comments_display">
                   <CommentsDisplay ids={img.comment_ids} comments={this.props.comments} users={this.props.users}/>
+                </div>
+                <div className="date_display">
+                  {`${month} ${day}, ${year}`}
                 </div>
                 <div className="comment_form">
                   <form onSubmit={this.handleSubmit}>
