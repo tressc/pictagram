@@ -59,10 +59,12 @@
 .idx_img_mid {
   display: flex;
   justify-content: center;
-  width: 615px;
+  width: 100%;
   height: 615px;
 }
 .idx_img_mid img {
+  padding: 0;
+  margin: 0;
   max-width: 615px;
   max-height: 615px;
 }
